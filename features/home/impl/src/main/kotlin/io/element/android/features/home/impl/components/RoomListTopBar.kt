@@ -151,7 +151,7 @@ private fun DefaultRoomListTopBar(
                             isVisible = !areSearchResultsDisplayed,
                         )
                         .statusBarsPadding(),
-                    colors = TopAppBarDefaults.mediumTopAppBarColors(
+                    colors = TopAppBarDefaults.topAppBarColors(
                         containerColor = Color.Transparent,
                         scrolledContainerColor = Color.Transparent,
                     ),
