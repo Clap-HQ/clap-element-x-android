@@ -174,6 +174,7 @@ import timber.log.Timber
             val transitionHandler = rememberDelegateTransitionHandler<NavTarget, BackStack.State> { navTarget ->
                 when (navTarget) {
                     is NavTarget.SplashScreen,
+                    is NavTarget.NotLoggedInFlow,
                     is NavTarget.LoggedInFlow -> backstackFader
                     else -> backstackSlider
                 }
