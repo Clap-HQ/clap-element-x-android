@@ -128,6 +128,7 @@ fun MediaViewerView(
                 is MediaViewerPageData.Failure -> {
                     MediaViewerErrorPage(
                         onDismiss = onBackClick,
+                        onRetry = { state.eventSink(MediaViewerEvents.ReloadTimeline) },
                     )
                 }
                 is MediaViewerPageData.Loading -> {
@@ -394,6 +395,7 @@ private fun MediaViewerLoadingPage(
 @Composable
 private fun MediaViewerErrorPage(
     onDismiss: () -> Unit,
+    onRetry: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
     MediaViewerFlickToDismiss(
@@ -407,9 +409,8 @@ private fun MediaViewerErrorPage(
             contentAlignment = Alignment.Center
         ) {
             AsyncFailure(
-                throwable = throwable,
-                onRetry = null
                 message = null,
+                onRetry = onRetry,
             )
         }
     }
