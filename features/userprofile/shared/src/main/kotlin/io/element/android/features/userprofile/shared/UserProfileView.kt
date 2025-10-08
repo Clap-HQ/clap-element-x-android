@@ -38,6 +38,7 @@ import io.element.android.libraries.designsystem.theme.components.ListItem
 import io.element.android.libraries.designsystem.theme.components.Scaffold
 import io.element.android.libraries.designsystem.theme.components.Text
 import io.element.android.libraries.designsystem.theme.components.TopAppBar
+import io.element.android.libraries.designsystem.utils.CommonDrawables
 import io.element.android.libraries.designsystem.utils.snackbar.SnackbarHost
 import io.element.android.libraries.designsystem.utils.snackbar.rememberSnackbarHostState
 import io.element.android.libraries.matrix.api.core.RoomId
@@ -45,6 +46,9 @@ import io.element.android.libraries.matrix.api.core.UserId
 import io.element.android.libraries.matrix.ui.components.CreateDmConfirmationBottomSheet
 import io.element.android.libraries.ui.strings.CommonStrings
 
+/**
+ * Ref: https://www.figma.com/design/pDlJZGBsri47FNTXMnEdXB/Compound-Android-Templates?node-id=21-120381
+ */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun UserProfileView(
@@ -67,9 +71,9 @@ fun UserProfileView(
     ) { padding ->
         Column(
             modifier = Modifier
-                    .padding(padding)
-                    .consumeWindowInsets(padding)
-                    .verticalScroll(rememberScrollState())
+                .padding(padding)
+                .consumeWindowInsets(padding)
+                .verticalScroll(rememberScrollState())
         ) {
             UserProfileHeaderSection(
                 avatarUrl = state.avatarUrl,
@@ -144,7 +148,9 @@ private fun VerifyUserSection(
 @Composable
 internal fun UserProfileViewPreview(
     @PreviewParameter(UserProfileStateProvider::class) state: UserProfileState
-) = ElementPreview {
+) = ElementPreview(
+    drawableFallbackForImages = CommonDrawables.sample_avatar,
+) {
     UserProfileView(
         state = state,
         onShareUser = {},

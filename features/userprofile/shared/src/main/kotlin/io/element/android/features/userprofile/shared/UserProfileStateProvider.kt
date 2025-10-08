@@ -23,7 +23,7 @@ open class UserProfileStateProvider : PreviewParameterProvider<UserProfileState>
     override val values: Sequence<UserProfileState>
         get() = sequenceOf(
             aUserProfileState(),
-            aUserProfileState(userName = null),
+            aUserProfileState(userName = null, avatarUrl = "anUrl"),
             aUserProfileState(isBlocked = AsyncData.Success(true), verificationState = UserProfileVerificationState.VERIFIED),
             aUserProfileState(displayConfirmationDialog = UserProfileState.ConfirmationDialog.Block),
             aUserProfileState(displayConfirmationDialog = UserProfileState.ConfirmationDialog.Unblock),
