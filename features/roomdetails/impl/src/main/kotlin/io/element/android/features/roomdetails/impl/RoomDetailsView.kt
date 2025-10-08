@@ -51,7 +51,6 @@ import io.element.android.libraries.designsystem.components.avatar.Avatar
 import io.element.android.libraries.designsystem.components.avatar.AvatarData
 import io.element.android.libraries.designsystem.components.avatar.AvatarSize
 import io.element.android.libraries.designsystem.components.avatar.AvatarType
-import io.element.android.libraries.designsystem.components.avatar.DmAvatars
 import io.element.android.libraries.designsystem.components.button.BackButton
 import io.element.android.libraries.designsystem.components.button.MainActionButton
 import io.element.android.libraries.designsystem.components.list.ListItemContent
@@ -152,7 +151,6 @@ fun RoomDetailsView(
                 }
                 is RoomDetailsType.Dm -> {
                     DmHeaderSection(
-                        me = state.roomType.me,
                         otherMember = state.roomType.otherMember,
                         roomName = state.roomName,
                         openAvatarPreview = { name, avatarUrl ->
@@ -423,7 +421,6 @@ private fun RoomHeaderSection(
 
 @Composable
 private fun DmHeaderSection(
-    me: RoomMember,
     otherMember: RoomMember,
     roomName: String,
     openAvatarPreview: (name: String, url: String) -> Unit,
@@ -436,11 +433,21 @@ private fun DmHeaderSection(
             .padding(horizontal = 16.dp),
         horizontalAlignment = Alignment.CenterHorizontally,
     ) {
-        DmAvatars(
-            userAvatarData = me.getAvatarData(size = AvatarSize.DmCluster),
-            otherUserAvatarData = otherMember.getAvatarData(size = AvatarSize.DmCluster),
-            openAvatarPreview = { url -> openAvatarPreview(me.getBestName(), url) },
-            openOtherAvatarPreview = { url -> openAvatarPreview(roomName, url) },
+        val avatarUrl = otherMember.avatarUrl
+        Avatar(
+            avatarData = otherMember.getAvatarData(size = AvatarSize.RoomDetailsHeader),
+            avatarType = AvatarType.Room(),
+            contentDescription = avatarUrl?.let { stringResource(CommonStrings.a11y_other_user_avatar) },
+            modifier = Modifier
+                .clickable(
+                    enabled = avatarUrl != null,
+                    onClickLabel = stringResource(CommonStrings.action_view),
+                ) {
+                    avatarUrl?.let {
+                        openAvatarPreview(otherMember.getBestName(), avatarUrl)
+                    }
+                }
+                .testTag(TestTags.roomDetailAvatar)
         )
         TitleAndSubtitle(
             title = roomName,
