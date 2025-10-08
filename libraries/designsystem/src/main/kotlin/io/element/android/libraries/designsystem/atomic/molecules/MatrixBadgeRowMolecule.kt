@@ -23,7 +23,7 @@ fun MatrixBadgeRowMolecule(
 ) {
     Row(
         modifier = modifier
-            .padding(start = 16.dp, end = 16.dp, top = 8.dp),
+            .padding(start = 16.dp, end = 16.dp, top = 12.dp),
         horizontalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         for (badge in data) {

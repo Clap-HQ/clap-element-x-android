@@ -90,6 +90,9 @@ import kotlinx.collections.immutable.ImmutableList
 import kotlinx.collections.immutable.toImmutableList
 import kotlinx.collections.immutable.toPersistentList
 
+/**
+ * Ref: https://www.figma.com/design/pDlJZGBsri47FNTXMnEdXB/Compound-Android-Templates?node-id=21-120385
+ */
 @Composable
 fun RoomDetailsView(
     state: RoomDetailsState,
@@ -331,6 +334,23 @@ private fun MainActionsSection(
             .padding(horizontal = 16.dp),
         horizontalArrangement = Arrangement.SpaceEvenly,
     ) {
+        if (state.roomCallState.hasPermissionToJoin()) {
+            // TODO Improve the view depending on all the cases here?
+            MainActionButton(
+                title = stringResource(CommonStrings.action_call),
+                imageVector = CompoundIcons.VideoCall(),
+                onClick = onCall,
+            )
+        }
+        if (state.roomType is RoomDetailsType.Room) {
+            if (state.canInvite) {
+                MainActionButton(
+                    title = stringResource(CommonStrings.action_invite),
+                    imageVector = CompoundIcons.UserAdd(),
+                    onClick = onInvitePeople,
+                )
+            }
+        }
         state.roomNotificationSettings?.let { roomNotificationSettings ->
             if (roomNotificationSettings.mode == RoomNotificationMode.MUTE) {
                 MainActionButton(
@@ -350,22 +370,7 @@ private fun MainActionsSection(
                 )
             }
         }
-        if (state.roomCallState.hasPermissionToJoin()) {
-            // TODO Improve the view depending on all the cases here?
-            MainActionButton(
-                title = stringResource(CommonStrings.action_call),
-                imageVector = CompoundIcons.VideoCall(),
-                onClick = onCall,
-            )
-        }
         if (state.roomType is RoomDetailsType.Room) {
-            if (state.canInvite) {
-                MainActionButton(
-                    title = stringResource(CommonStrings.action_invite),
-                    imageVector = CompoundIcons.UserAdd(),
-                    onClick = onInvitePeople,
-                )
-            }
             // Share CTA should be hidden for DMs
             MainActionButton(
                 title = stringResource(CommonStrings.action_share),
@@ -472,13 +477,25 @@ private fun TitleAndSubtitle(
         )
         if (subtitle != null) {
             Spacer(modifier = Modifier.height(6.dp))
-            Text(
+            Row(
                 modifier = Modifier.niceClickable { onSubtitleClick(subtitle) },
-                text = subtitle,
-                style = ElementTheme.typography.fontBodyLgRegular,
-                color = ElementTheme.colors.textSecondary,
-                textAlign = TextAlign.Center,
-            )
+                verticalAlignment = Alignment.CenterVertically,
+            ) {
+                Text(
+                    text = subtitle,
+                    style = ElementTheme.typography.fontBodyLgRegular,
+                    color = ElementTheme.colors.textSecondary,
+                    textAlign = TextAlign.Center,
+                )
+                Icon(
+                    imageVector = CompoundIcons.Copy(),
+                    contentDescription = null,
+                    tint = ElementTheme.colors.iconSecondary,
+                    modifier = Modifier
+                        .padding(start = 4.dp)
+                        .size(20.dp)
+                )
+            }
         }
     }
 }
