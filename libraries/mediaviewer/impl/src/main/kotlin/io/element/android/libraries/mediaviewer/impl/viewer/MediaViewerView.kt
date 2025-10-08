@@ -127,7 +127,6 @@ fun MediaViewerView(
             when (val dataForPage = state.listData[page]) {
                 is MediaViewerPageData.Failure -> {
                     MediaViewerErrorPage(
-                        throwable = dataForPage.throwable,
                         onDismiss = onBackClick,
                     )
                 }
@@ -394,7 +393,6 @@ private fun MediaViewerLoadingPage(
 
 @Composable
 private fun MediaViewerErrorPage(
-    throwable: Throwable,
     onDismiss: () -> Unit,
     modifier: Modifier = Modifier,
 ) {
@@ -411,6 +409,7 @@ private fun MediaViewerErrorPage(
             AsyncFailure(
                 throwable = throwable,
                 onRetry = null
+                message = null,
             )
         }
     }
