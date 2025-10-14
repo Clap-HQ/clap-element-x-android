@@ -9,6 +9,7 @@ package io.element.android.libraries.matrix.impl.roomlist
 
 import io.element.android.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomList
 import io.element.android.libraries.matrix.impl.fixtures.fakes.FakeFfiRoomListService
+import io.element.android.tests.testutils.testCoroutineDispatchers
 import kotlinx.coroutines.test.runTest
 import org.junit.Test
 import kotlin.coroutines.EmptyCoroutineContext
@@ -19,6 +20,7 @@ class RoomListFactoryTest {
         val sut = RoomListFactory(
             innerRoomListService = FakeFfiRoomListService(),
             sessionCoroutineScope = backgroundScope,
+            coroutineDispatchers = testCoroutineDispatchers(),
         )
         sut.createRoomList(
             pageSize = 10,
