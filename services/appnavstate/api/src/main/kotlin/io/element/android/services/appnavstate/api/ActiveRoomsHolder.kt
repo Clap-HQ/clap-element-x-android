@@ -53,8 +53,11 @@ class ActiveRoomsHolder {
      */
     fun removeRoom(sessionId: SessionId, roomId: RoomId) {
         val roomsForSessionId = rooms[sessionId] ?: return
-        roomsForSessionId.find { it.roomId == roomId }?.destroy()
-        roomsForSessionId.removeIf { it.roomId == roomId }
+        roomsForSessionId.find { it.roomId == roomId }?.let { room ->
+            // Destroy the room to reset the live timeline
+            room.destroy()
+            roomsForSessionId.remove(room)
+        }
     }
 
     /**
