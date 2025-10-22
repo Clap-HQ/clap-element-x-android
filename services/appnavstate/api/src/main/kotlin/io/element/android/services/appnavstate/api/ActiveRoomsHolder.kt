@@ -53,6 +53,7 @@ class ActiveRoomsHolder {
      */
     fun removeRoom(sessionId: SessionId, roomId: RoomId) {
         val roomsForSessionId = rooms[sessionId] ?: return
+        roomsForSessionId.find { it.roomId == roomId }?.destroy()
         roomsForSessionId.removeIf { it.roomId == roomId }
     }
 
