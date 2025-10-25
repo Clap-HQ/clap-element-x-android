@@ -11,6 +11,8 @@ import app.cash.molecule.RecompositionMode
 import app.cash.molecule.moleculeFlow
 import app.cash.turbine.test
 import com.google.common.truth.Truth.assertThat
+import io.element.android.emojibasebindings.Emoji
+import io.element.android.emojibasebindings.EmojibaseCategory
 import io.element.android.features.messages.impl.aUserEventPermissions
 import io.element.android.features.messages.impl.actionlist.model.TimelineItemAction
 import io.element.android.features.messages.impl.actionlist.model.TimelineItemActionPostProcessor
@@ -42,9 +44,12 @@ import io.element.android.libraries.matrix.test.A_USER_ID
 import io.element.android.libraries.matrix.test.room.FakeBaseRoom
 import io.element.android.libraries.matrix.test.room.aRoomInfo
 import io.element.android.libraries.preferences.test.InMemoryAppPreferencesStore
+import io.element.android.libraries.recentemojis.api.GetRecentEmojis
+import io.element.android.libraries.recentemojis.test.FakeEmojibaseProvider
 import io.element.android.tests.testutils.WarmUpRule
 import io.element.android.tests.testutils.test
 import kotlinx.collections.immutable.persistentListOf
+import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.test.runTest
 import org.junit.Rule
 import org.junit.Test
@@ -1483,6 +1488,51 @@ class ActionListPresenterTest {
             )
         }
     }
+
+    @Test
+    fun `present - recentEmojis merges suggested and recent emojis`() = runTest {
+        val suggestedEmojis = persistentListOf("👍️", "👎️", "🔥", "❤️", "👏")
+        val otherEmojis = (0..100).map { it.toString() }
+
+        val presenter = createActionListPresenter(
+            isDeveloperModeEnabled = false,
+            recentEmojis = GetRecentEmojis { Result.success((listOf("👍️", ":)", "❤️") + otherEmojis).toPersistentList()) },
+        )
+        moleculeFlow(RecompositionMode.Immediate) {
+            presenter.present()
+        }.test {
+            val initialState = awaitItem()
+            val messageEvent = aMessageEvent(
+                eventId = null,
+                transactionId = A_TRANSACTION_ID,
+                isMine = true,
+                isEditable = false,
+                content = aTimelineItemVoiceContent(
+                    caption = null,
+                ),
+            )
+
+            initialState.eventSink.invoke(
+                ActionListEvents.ComputeForMessage(
+                    event = messageEvent,
+                    userEventPermissions = aUserEventPermissions(
+                        canRedactOwn = true,
+                        canRedactOther = false,
+                        canSendMessage = true,
+                        canSendReaction = true,
+                        canPinUnpin = true
+                    )
+                )
+            )
+            val successState = awaitItem()
+            assertThat(successState.target).isInstanceOf(ActionListState.Target.Success::class.java)
+
+            // Check items are deduplicated between suggested and recent emojis and we take at most 100 items
+            val expectedEmojis = (suggestedEmojis + persistentListOf(":)") + otherEmojis).take(100)
+            assertThat((successState.target as ActionListState.Target.Success).recentEmojis)
+                .isEqualTo(expectedEmojis)
+        }
+    }
 }
 
 private fun createActionListPresenter(
@@ -1490,6 +1540,7 @@ private fun createActionListPresenter(
     room: BaseRoom = FakeBaseRoom(),
     timelineMode: Timeline.Mode = Timeline.Mode.Live,
     featureFlagService: FakeFeatureFlagService = FakeFeatureFlagService(),
+    recentEmojis: GetRecentEmojis = GetRecentEmojis { Result.success(persistentListOf()) },
 ): ActionListPresenter {
     val preferencesStore = InMemoryAppPreferencesStore(isDeveloperModeEnabled = isDeveloperModeEnabled)
     return DefaultActionListPresenter(
@@ -1500,6 +1551,6 @@ private fun createActionListPresenter(
         dateFormatter = FakeDateFormatter(),
         timelineMode = timelineMode,
         featureFlagService = featureFlagService,
-        getRecentEmojis = { Result.success(persistentListOf()) },
+        getRecentEmojis = recentEmojis,
     )
 }
