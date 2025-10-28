@@ -592,6 +592,12 @@ class RustTimeline(
         }
     }
 
+    override suspend fun getLatestEventId(): Result<EventId?> = withContext(dispatcher) {
+        runCatchingExceptions {
+            inner.latestEventId()?.let(::EventId)
+        }
+    }
+
     private suspend fun fetchDetailsForEvent(eventId: EventId): Result<Unit> = withContext(dispatcher) {
         runCatchingExceptions {
             inner.fetchDetailsForEvent(eventId.value)

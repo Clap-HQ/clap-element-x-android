@@ -9,12 +9,14 @@ package io.element.android.features.messages.impl
 
 import android.app.Activity
 import android.content.Context
+import androidx.activity.compose.BackHandler
 import androidx.activity.compose.LocalActivity
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.CompositionLocalProvider
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
@@ -263,6 +265,8 @@ class MessagesNode(
         context.toast(CommonStrings.screen_room_permalink_same_room_android)
     }
 
+    override fun onNavigateUp() = navigateUp()
+
     @Composable
     override fun View(modifier: Modifier) {
         val activity = requireNotNull(LocalActivity.current)
@@ -271,6 +275,13 @@ class MessagesNode(
             LocalTimelineItemPresenterFactories provides timelineItemPresenterFactories,
         ) {
             val state = presenter.present()
+
+            var navigatingBack by remember { mutableStateOf(false) }
+            BackHandler(enabled = !navigatingBack) {
+                state.eventSink(MessagesEvents.MarkAsFullyReadAndExit)
+                navigatingBack = true
+            }
+
             OnLifecycleEvent { _, event ->
                 when (event) {
                     Lifecycle.Event.ON_PAUSE -> state.composerState.eventSink(MessageComposerEvents.SaveDraft)
@@ -279,7 +290,7 @@ class MessagesNode(
             }
             MessagesView(
                 state = state,
-                onBackClick = this::navigateUp,
+                onBackClick = { state.eventSink(MessagesEvents.MarkAsFullyReadAndExit) },
                 onRoomDetailsClick = this::onRoomDetailsClick,
                 onEventContentClick = { isLive, event ->
                     if (isLive) {

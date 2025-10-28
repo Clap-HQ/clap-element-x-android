@@ -228,4 +228,9 @@ interface Timeline : AutoCloseable {
      * pinned
      */
     suspend fun unpinEvent(eventId: EventId): Result<Boolean>
+
+    /**
+     * Get the latest event id of the timeline.
+     */
+    suspend fun getLatestEventId(): Result<EventId?>
 }

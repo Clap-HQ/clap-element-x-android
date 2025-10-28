@@ -1,0 +1,38 @@
+/*
+ * Copyright 2025 New Vector Ltd.
+ *
+ * SPDX-License-Identifier: AGPL-3.0-only OR LicenseRef-Element-Commercial
+ * Please see LICENSE files in the repository root for full details.
+ */
+
+package io.element.android.libraries.designsystem.utils
+
+import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import kotlinx.coroutines.delay
+import kotlin.time.Duration
+import kotlin.time.Duration.Companion.milliseconds
+
+/**
+ * Displays the content of [block] after a delay of [duration].
+ */
+@Composable
+fun DelayedVisibility(
+    duration: Duration = 300.milliseconds,
+    block: @Composable () -> Unit,
+) {
+    var shouldDisplay by remember { mutableStateOf(false) }
+    LaunchedEffect(Unit) {
+        delay(duration)
+        shouldDisplay = true
+    }
+
+    AnimatedVisibility(shouldDisplay) {
+        block()
+    }
+}
