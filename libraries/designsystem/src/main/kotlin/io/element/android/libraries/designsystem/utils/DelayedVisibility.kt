@@ -14,6 +14,7 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
+import androidx.compose.ui.platform.LocalInspectionMode
 import kotlinx.coroutines.delay
 import kotlin.time.Duration
 import kotlin.time.Duration.Companion.milliseconds
@@ -26,7 +27,8 @@ fun DelayedVisibility(
     duration: Duration = 300.milliseconds,
     block: @Composable () -> Unit,
 ) {
-    var shouldDisplay by remember { mutableStateOf(false) }
+    val isPreview = LocalInspectionMode.current
+    var shouldDisplay by remember { mutableStateOf(!isPreview) }
     LaunchedEffect(Unit) {
         delay(duration)
         shouldDisplay = true
