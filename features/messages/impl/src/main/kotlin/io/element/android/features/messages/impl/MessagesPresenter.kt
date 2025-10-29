@@ -95,6 +95,7 @@ import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import timber.log.Timber
+import java.util.concurrent.atomic.AtomicBoolean
 
 @AssistedInject
 class MessagesPresenter(
@@ -141,6 +142,8 @@ class MessagesPresenter(
     private val voiceMessageComposerPresenter = voiceMessageComposerPresenterFactory.create(
         timelineMode = timelineController.mainTimelineMode()
     )
+
+    private val markingAsReadAndExiting = AtomicBoolean(false)
 
     @Composable
     override fun present(): MessagesState {
@@ -245,17 +248,20 @@ class MessagesPresenter(
                     roomMemberModerationState.eventSink(RoomMemberModerationEvents.ShowActionsForUser(event.user))
                 }
                 is MessagesEvents.MarkAsFullyReadAndExit -> coroutineScope.launch {
-                    val latestEventId = room.liveTimeline.getLatestEventId().getOrElse {
-                        Timber.w(it, "Failed to get latest event id to mark as fully read")
-                        navigator.onNavigateUp()
-                        return@launch
-                    }
-                    latestEventId?.let { eventId ->
-                        sessionCoroutineScope.launch {
-                            markAsFullyRead(room.roomId, eventId)
+                    if (!markingAsReadAndExiting.getAndSet(true)) {
+                        val latestEventId = room.liveTimeline.getLatestEventId().getOrElse {
+                            Timber.w(it, "Failed to get latest event id to mark as fully read")
+                            navigator.onNavigateUp()
+                            return@launch
                         }
+                        latestEventId?.let { eventId ->
+                            sessionCoroutineScope.launch {
+                                markAsFullyRead(room.roomId, eventId)
+                            }
+                        }
+                        navigator.onNavigateUp()
+                        markingAsReadAndExiting.set(false)
                     }
-                    navigator.onNavigateUp()
                 }
             }
         }
