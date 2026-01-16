@@ -41,9 +41,21 @@ android {
             value = if (isEnterpriseBuild) {
                 BuildTimeConfig.BUG_REPORT_APP_NAME ?: ""
             } else {
-                "element-x-android"
+                "clap-android"
             },
         )
+    }
+
+    buildTypes {
+        // Debug buildType (Clap Dev scheme)
+        getByName("debug") {
+            buildConfigFieldStr("CLAP_HOMESERVER", BuildTimeConfig.CLAP_HOMESERVER_DEBUG)
+        }
+
+        // Release buildType (Clap scheme)
+        getByName("release") {
+            buildConfigFieldStr("CLAP_HOMESERVER", BuildTimeConfig.CLAP_HOMESERVER_RELEASE)
+        }
     }
 }
 

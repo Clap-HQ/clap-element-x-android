@@ -8,8 +8,24 @@
 
 package io.element.android.appconfig
 
+import io.element.android.appconfig.BuildConfig
+
 object AuthenticationConfig {
     const val MATRIX_ORG_URL = "https://matrix.org"
+
+    /**
+     * Clap homeserver URL.
+     * Automatically set based on build type:
+     * - Debug: "dev.clap.ac"
+     * - Release: "clap.ac"
+     */
+    val CLAP_HOMESERVER_URL: String = "https://${BuildConfig.CLAP_HOMESERVER}"
+
+    /**
+     * Default homeserver URL for Clap.
+     * Used as fallback when no custom homeserver is specified.
+     */
+    val DEFAULT_HOMESERVER_URL: String = CLAP_HOMESERVER_URL
 
     /**
      * URL with some docs that explain what's sliding sync and how to add it to your home server.

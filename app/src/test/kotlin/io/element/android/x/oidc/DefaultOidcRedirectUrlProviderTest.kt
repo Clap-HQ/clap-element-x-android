@@ -23,7 +23,7 @@ class DefaultOidcRedirectUrlProviderTest {
             stringProvider = stringProvider,
         )
         val result = sut.provide()
-        assertThat(result).isEqualTo("str:/")
+        assertThat(result).isEqualTo("https://str/oidc/login")
         assertThat(stringProvider.lastResIdParam).isEqualTo(R.string.login_redirect_scheme)
     }
 }

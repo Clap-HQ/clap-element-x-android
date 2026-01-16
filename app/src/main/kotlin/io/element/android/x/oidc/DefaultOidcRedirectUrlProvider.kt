@@ -19,7 +19,8 @@ class DefaultOidcRedirectUrlProvider(
     private val stringProvider: StringProvider,
 ) : OidcRedirectUrlProvider {
     override fun provide() = buildString {
+        append("https://")
         append(stringProvider.getString(R.string.login_redirect_scheme))
-        append(":/")
+        append("/oidc/login")
     }
 }

@@ -27,6 +27,7 @@ import extension.setupDependencyInjection
 import extension.setupKover
 import extension.testCommonDependencies
 import java.util.Locale
+import java.util.Properties
 
 plugins {
     id("io.element.android-compose-application")
@@ -85,21 +86,26 @@ android {
         }
     }
 
+    val keystorePassword: String = run {
+        System.getenv("CLAP_KEYSTORE_PASSWORD") ?: run {
+            val props = Properties()
+            rootProject.file("local.properties").takeIf { it.exists() }?.inputStream()?.use { props.load(it) }
+            props.getProperty("CLAP_KEYSTORE_PASSWORD") ?: ""
+        }
+    }
+
     signingConfigs {
         getByName("debug") {
-            keyAlias = "androiddebugkey"
-            keyPassword = "android"
-            storeFile = file("./signature/debug.keystore")
-            storePassword = "android"
+            keyAlias = "clap-debug"
+            keyPassword = keystorePassword
+            storeFile = file("./signature/clap/debug.keystore")
+            storePassword = keystorePassword
         }
-        register("nightly") {
-            keyAlias = System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYID")
-                ?: project.property("signing.element.nightly.keyId") as? String?
-            keyPassword = System.getenv("ELEMENT_ANDROID_NIGHTLY_KEYPASSWORD")
-                ?: project.property("signing.element.nightly.keyPassword") as? String?
-            storeFile = file("./signature/nightly.keystore")
-            storePassword = System.getenv("ELEMENT_ANDROID_NIGHTLY_STOREPASSWORD")
-                ?: project.property("signing.element.nightly.storePassword") as? String?
+        register("release") {
+            keyAlias = "clap-release"
+            keyPassword = keystorePassword
+            storeFile = file("./signature/clap/release.keystore")
+            storePassword = keystorePassword
         }
     }
 
@@ -108,15 +114,16 @@ android {
     logger.warnInBox("Building ${defaultConfig.applicationId} ($baseAppName) [$buildType]")
 
     buildTypes {
-        val oidcRedirectSchemeBase = BuildTimeConfig.METADATA_HOST_REVERSED ?: "io.element.android"
+        // OIDC redirect scheme uses the homeserver URL (same as iOS)
         getByName("debug") {
-            resValue("string", "app_name", "$baseAppName dbg")
+            resValue("string", "app_name", "$baseAppName Dev")
             resValue(
                 "string",
                 "login_redirect_scheme",
-                "$oidcRedirectSchemeBase.debug",
+                BuildTimeConfig.CLAP_HOMESERVER_DEBUG,
             )
-            applicationIdSuffix = ".debug"
+            applicationIdSuffix = ".dev"
+            buildConfigFieldStr("CLAP_HOMESERVER", BuildTimeConfig.CLAP_HOMESERVER_DEBUG)
             signingConfig = signingConfigs.getByName("debug")
         }
 
@@ -125,9 +132,10 @@ android {
             resValue(
                 "string",
                 "login_redirect_scheme",
-                oidcRedirectSchemeBase,
+                BuildTimeConfig.CLAP_HOMESERVER_RELEASE,
             )
-            signingConfig = signingConfigs.getByName("debug")
+            buildConfigFieldStr("CLAP_HOMESERVER", BuildTimeConfig.CLAP_HOMESERVER_RELEASE)
+            signingConfig = signingConfigs.getByName("release")
 
             optimization {
                 enable = true
@@ -147,10 +155,10 @@ android {
             resValue(
                 "string",
                 "login_redirect_scheme",
-                "$oidcRedirectSchemeBase.nightly",
+                BuildTimeConfig.CLAP_HOMESERVER_RELEASE,
             )
             matchingFallbacks += listOf("release")
-            signingConfig = signingConfigs.getByName("nightly")
+            signingConfig = signingConfigs.getByName("release")
 
             firebaseAppDistribution {
                 artifactType = "APK"
