@@ -211,6 +211,59 @@ data class SemanticColors(
     val textSecondary: Color,
     /** Accent text colour for success state elements. */
     val textSuccessPrimary: Color,
+
+    // Clap Design System Colors
+    /** Background color for incoming bubble messages. */
+    val clapBgBubbleIncoming: Color,
+    /** Background color for outgoing bubble messages. */
+    val clapBgBubbleOutgoing: Color,
+    /** Text color for incoming bubble messages. */
+    val clapTextBubbleIncoming: Color,
+    /** Text color for outgoing bubble messages. */
+    val clapTextBubbleOutgoing: Color,
+    /** Secondary text color for incoming bubble messages (e.g., blockquotes). */
+    val clapTextBubbleSecondaryIncoming: Color,
+    /** Secondary text color for outgoing bubble messages (e.g., blockquotes). */
+    val clapTextBubbleSecondaryOutgoing: Color,
+    /** Icon color for incoming bubble messages. */
+    val clapIconBubbleIncoming: Color,
+    /** Icon color for outgoing bubble messages. */
+    val clapIconBubbleOutgoing: Color,
+    /** Code block background color for incoming messages. */
+    val clapBgCodeBlockIncoming: Color,
+    /** Code block background color for outgoing messages. */
+    val clapBgCodeBlockOutgoing: Color,
+    /** Code block text color for incoming messages. */
+    val clapTextCodeBlockIncoming: Color,
+    /** Code block text color for outgoing messages. */
+    val clapTextCodeBlockOutgoing: Color,
+    /** Poll progress bar empty background for incoming messages. */
+    val clapBgPollProgressEmptyIncoming: Color,
+    /** Poll progress bar empty background for outgoing messages. */
+    val clapBgPollProgressEmptyOutgoing: Color,
+    /** Poll progress bar filled color for incoming messages. */
+    val clapBgPollProgressFilledIncoming: Color,
+    /** Poll progress bar filled color for outgoing messages. */
+    val clapBgPollProgressFilledOutgoing: Color,
+    /** Clap theme background color. */
+    val clapThemeBg: Color,
+    /** Clap subtle secondary background color. */
+    val clapBgSubtleSecondary: Color,
+    /** Clap primary text color. */
+    val clapTextPrimary: Color,
+    /** Clap secondary text color. */
+    val clapTextSecondary: Color,
+    /** Clap accent tertiary icon color. */
+    val clapIconAccentTertiary: Color,
+    /** Clap badge accent text color. */
+    val clapTextBadgeAccent: Color,
+    /** Clap badge accent background color. */
+    val clapBgBadgeAccent: Color,
+    /** Clap badge default background color. */
+    val clapBgBadgeDefault: Color,
+    /** Clap canvas background color. */
+    val bgCanvasClap: Color,
+
     /** True for light theme, false for dark theme. */
     val isLight: Boolean,
 )
