@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Кімнати, в яких ви перебуваєте"</string>
+  <string name="space_room_list_unjoined_section_title">"Кімнати, до яких ви можете приєднатися"</string>
+  <string name="screen_space_create_room">"Створити кімнату"</string>
+  <string name="screen_space_remove_room">"Вилучити з простору"</string>
+  <string name="screen_space_remove_room_alert_title">"Вилучити кімнату"</string>
+  <string name="screen_space_remove_room_alert_message">"Ви впевнені, що хочете вилучити \"%1$s\" з цього простору?"</string>
+  <string name="screen_space_remove_room_success">"%1$s вилучено з простору"</string>
+  <string name="screen_space_create_room_visibility_header">"Видимість кімнати"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Видима для учасників простору"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"Будь-хто з %1$s може знайти та приєднатися до цієї кімнати. Лише адміністратори цієї кімнати можуть додавати її до простору."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Приватна кімната (лише за запрошенням)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Лише запрошені особи можуть знайти та приєднатися до цієї кімнати. Ви можете змінити це в будь-який час у налаштуваннях кімнати."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Загальнодоступна кімната"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Будь-хто може знайти та приєднатися до цієї кімнати. Ви можете змінити це в будь-який час у налаштуваннях кімнати."</string>
+  <string name="screen_space_create_room_encryption_title">"Увімкнути наскрізне шифрування"</string>
+  <string name="screen_space_create_room_encryption_description">"Ви не зможете вимкнути це пізніше. Мости й більшість ботів поки не працюватимуть."</string>
+  <string name="screen_thread_list_title">"Гілки"</string>
+  <string name="screen_thread_list_empty_title">"Ще немає гілок"</string>
+  <string name="screen_thread_list_empty_description">"Почніть гілку, відповівши на будь-яке повідомлення"</string>
+  <string name="screen_thread_activity_title">"Активність гілок"</string>
+  <string name="screen_thread_activity_empty_title">"Немає непрочитаних гілок"</string>
+  <string name="screen_thread_activity_empty_description">"Ви все прочитали!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Також вилучити з усіх кімнат"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Приєднатися до всіх кімнат?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"Бажаєте приєднатися до всіх кімнат у %1$s?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Приєднатися до всіх"</string>
   <string name="screen_space_settings_roles_and_permissions">"Ролі та дозволи"</string>
   <string name="screen_space_settings_security_and_privacy">"Безпека й приватність"</string>
 </resources>

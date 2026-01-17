@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Salas en las que estás"</string>
+  <string name="space_room_list_unjoined_section_title">"Salas a las que puedes unirte"</string>
+  <string name="screen_space_create_room">"Crear sala"</string>
+  <string name="screen_space_remove_room">"Quitar del espacio"</string>
+  <string name="screen_space_remove_room_alert_title">"Quitar sala"</string>
+  <string name="screen_space_remove_room_alert_message">"¿Estás seguro de que quieres quitar \"%1$s\" de este espacio?"</string>
+  <string name="screen_space_remove_room_success">"%1$s quitado del espacio"</string>
+  <string name="screen_space_create_room_visibility_header">"Visibilidad de la sala"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Visible para los miembros del espacio"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"Cualquier persona en %1$s puede encontrar y unirse a esta sala. Solo los administradores de esta sala pueden añadirla a un espacio."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Sala privada (solo por invitación)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Solo las personas invitadas pueden encontrar y unirse a esta sala. Puedes cambiar esto en cualquier momento desde la configuración de la sala."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Sala pública"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Cualquiera puede encontrar y unirse a esta sala. Puedes cambiar esto en cualquier momento desde la configuración de la sala."</string>
+  <string name="screen_space_create_room_encryption_title">"Activar el cifrado de extremo a extremo"</string>
+  <string name="screen_space_create_room_encryption_description">"No podrás desactivarlo más adelante. Los puentes y la mayoría de bots todavía no funcionarán."</string>
+  <string name="screen_thread_list_title">"Hilos"</string>
+  <string name="screen_thread_list_empty_title">"Aún no hay hilos"</string>
+  <string name="screen_thread_list_empty_description">"Inicia un hilo respondiendo a cualquier mensaje"</string>
+  <string name="screen_thread_activity_title">"Actividad de hilos"</string>
+  <string name="screen_thread_activity_empty_title">"No hay hilos sin leer"</string>
+  <string name="screen_thread_activity_empty_description">"¡Estás al día!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"También eliminar de todas las salas"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"¿Unirse a todas las salas?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"¿Quieres unirte a todas las salas en %1$s?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Unirse a todas"</string>
   <string name="screen_space_settings_roles_and_permissions">"Roles y permisos"</string>
   <string name="screen_space_settings_security_and_privacy">"Seguridad y privacidad"</string>
 </resources>

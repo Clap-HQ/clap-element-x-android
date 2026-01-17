@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Zure gelak"</string>
+  <string name="space_room_list_unjoined_section_title">"Elkartu zaitezkeen gelak"</string>
+  <string name="screen_space_create_room">"Sortu gela"</string>
+  <string name="screen_space_remove_room">"Kendu espaziotik"</string>
+  <string name="screen_space_remove_room_alert_title">"Kendu gela"</string>
+  <string name="screen_space_remove_room_alert_message">"Ziur zaude \"%1$s\" espazio honetatik kendu nahi duzula?"</string>
+  <string name="screen_space_remove_room_success">"%1$s espaziotik kenduta"</string>
+  <string name="screen_space_create_room_visibility_header">"Gelaren ikusgaitasuna"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Espazioaren kideentzat ikusgai"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"%1$s espazioko edonork aurkitu eta batu dezake gela honetara. Gela honen administratzaileek bakarrik gehitu dezakete espazio batera."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Gela pribatua (gonbidapenez bakarrik)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Gonbidatutako pertsonek bakarrik aurkitu eta batu daitezke gela honetara. Hau edozein unetan alda dezakezu gelaren ezarpenetan."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Gela publikoa"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Edonork aurkitu eta batu dezake gela honetara. Hau edozein unetan alda dezakezu gelaren ezarpenetan."</string>
+  <string name="screen_space_create_room_encryption_title">"Gaitu muturretik muturrerako enkriptatzea"</string>
+  <string name="screen_space_create_room_encryption_description">"Ezin duzu hau geroago desgaitu. Zubiak eta bot gehienak oraindik ez dira funtzionatuko."</string>
+  <string name="screen_thread_list_title">"Hariak"</string>
+  <string name="screen_thread_list_empty_title">"Oraindik ez dago haririk"</string>
+  <string name="screen_thread_list_empty_description">"Hasi hari bat edozein mezuri erantzunez"</string>
+  <string name="screen_thread_activity_title">"Harien jarduera"</string>
+  <string name="screen_thread_activity_empty_title">"Ez dago irakurri gabeko haririk"</string>
+  <string name="screen_thread_activity_empty_description">"Egunean zaude!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Kendu gela guztietatik ere"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Gela guztietara batu?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"%1$s-ko gela guztietara batu nahi duzu?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Guztietara batu"</string>
   <string name="screen_space_settings_roles_and_permissions">"Rolak eta baimenak"</string>
   <string name="screen_space_settings_security_and_privacy">"Segurtasuna eta pribatutasuna"</string>
 </resources>

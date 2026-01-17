@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Ruangan yang Anda ikuti"</string>
+  <string name="space_room_list_unjoined_section_title">"Ruangan yang dapat Anda ikuti"</string>
+  <string name="screen_space_create_room">"Buat ruangan"</string>
+  <string name="screen_space_remove_room">"Keluarkan dari space"</string>
+  <string name="screen_space_remove_room_alert_title">"Hapus ruangan"</string>
+  <string name="screen_space_remove_room_alert_message">"Apakah Anda yakin ingin menghapus \"%1$s\" dari space ini?"</string>
+  <string name="screen_space_remove_room_success">"%1$s dihapus dari space"</string>
+  <string name="screen_space_create_room_visibility_header">"Visibilitas ruangan"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Dapat dilihat oleh anggota space"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"Siapa pun di %1$s dapat menemukan dan bergabung ke ruangan ini. Hanya admin ruangan ini yang dapat menambahkannya ke space."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Ruangan privat (undangan saja)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Hanya orang yang diundang yang dapat menemukan dan bergabung ke ruangan ini. Anda dapat mengubah ini kapan saja di pengaturan ruangan."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Ruangan publik"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Siapa pun dapat menemukan dan bergabung ke ruangan ini. Anda dapat mengubah ini kapan saja di pengaturan ruangan."</string>
+  <string name="screen_space_create_room_encryption_title">"Aktifkan enkripsi ujung ke ujung"</string>
+  <string name="screen_space_create_room_encryption_description">"Anda tidak dapat menonaktifkannya nanti. Jembatan &amp; kebanyakan bot belum dapat digunakan."</string>
+  <string name="screen_thread_list_title">"Utas"</string>
+  <string name="screen_thread_list_empty_title">"Belum ada utas"</string>
+  <string name="screen_thread_list_empty_description">"Mulai utas dengan membalas pesan apa pun"</string>
+  <string name="screen_thread_activity_title">"Aktivitas Utas"</string>
+  <string name="screen_thread_activity_empty_title">"Tidak ada utas yang belum dibaca"</string>
+  <string name="screen_thread_activity_empty_description">"Anda sudah membaca semuanya!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Juga keluarkan dari semua ruangan"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Bergabung ke semua ruangan?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"Apakah Anda ingin bergabung ke semua ruangan di %1$s?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Bergabung ke semua"</string>
   <string name="screen_space_settings_roles_and_permissions">"Peran dan perizinan"</string>
   <string name="screen_space_settings_security_and_privacy">"Keamanan &amp; privasi"</string>
 </resources>

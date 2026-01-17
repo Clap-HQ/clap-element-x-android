@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Katıldığınız odalar"</string>
+  <string name="space_room_list_unjoined_section_title">"Katılabileceğiniz odalar"</string>
+  <string name="screen_space_create_room">"Oda oluştur"</string>
+  <string name="screen_space_remove_room">"Alandan kaldır"</string>
+  <string name="screen_space_remove_room_alert_title">"Odayı kaldır"</string>
+  <string name="screen_space_remove_room_alert_message">"\"%1$s\" öğesini bu alandan kaldırmak istediğinize emin misiniz?"</string>
+  <string name="screen_space_remove_room_success">"%1$s alandan kaldırıldı"</string>
+  <string name="screen_space_create_room_visibility_header">"Oda görünürlüğü"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Alan üyeleri tarafından görülebilir"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"%1$s alanındaki herkes bu odayı bulabilir ve katılabilir. Sadece bu odanın yöneticileri onu bir alana ekleyebilir."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Özel oda (yalnızca davetliler)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Sadece davet edilen kişiler bu odayı bulabilir ve katılabilir. Bunu istediğiniz zaman oda ayarlarından değiştirebilirsiniz."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Herkese açık oda"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Herkes bu odayı bulabilir ve katılabilir. Bunu istediğiniz zaman oda ayarlarından değiştirebilirsiniz."</string>
+  <string name="screen_space_create_room_encryption_title">"Uçtan uca şifrelemeyi etkinleştir"</string>
+  <string name="screen_space_create_room_encryption_description">"Bunu daha sonra devre dışı bırakamazsınız. Köprüler ve çoğu bot henüz çalışmayacaktır."</string>
+  <string name="screen_thread_list_title">"Konular"</string>
+  <string name="screen_thread_list_empty_title">"Henüz konu yok"</string>
+  <string name="screen_thread_list_empty_description">"Herhangi bir mesajı yanıtlayarak bir konu başlatın"</string>
+  <string name="screen_thread_activity_title">"Konu Etkinliği"</string>
+  <string name="screen_thread_activity_empty_title">"Okunmamış konu yok"</string>
+  <string name="screen_thread_activity_empty_description">"Her şeyi okudunuz!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Tüm odalardan da kaldır"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Tüm odalara katıl?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"%1$s içindeki tüm odalara katılmak ister misiniz?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Tümüne katıl"</string>
   <string name="screen_space_settings_roles_and_permissions">"Roller ve izinler"</string>
   <string name="screen_space_settings_security_and_privacy">"Güvenlik ve gizlilik"</string>
 </resources>

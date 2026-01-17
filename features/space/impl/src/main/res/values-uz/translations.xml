@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Siz aʼzo boʻlgan xonalar"</string>
+  <string name="space_room_list_unjoined_section_title">"Qoʻshilishingiz mumkin boʻlgan xonalar"</string>
+  <string name="screen_space_create_room">"Xona yaratish"</string>
+  <string name="screen_space_remove_room">"Fazoviydan olib tashlash"</string>
+  <string name="screen_space_remove_room_alert_title">"Xonani olib tashlash"</string>
+  <string name="screen_space_remove_room_alert_message">"Haqiqatan ham \"%1$s\"ni bu fazoviydan olib tashlamoqchimisiz?"</string>
+  <string name="screen_space_remove_room_success">"%1$s fazoviydan olib tashlandi"</string>
+  <string name="screen_space_create_room_visibility_header">"Xona ko\'rinishi"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Fazoviy a\'zolariga ko\'rinadi"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"%1$sdagi har kim bu xonani topishi va qo\'shilishi mumkin. Faqat bu xonaning administratorlari uni fazoviyga qo\'shishi mumkin."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Shaxsiy xona (faqat taklif bilan)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Faqat taklif qilingan odamlar bu xonani topishi va qo\'shilishi mumkin. Buni istalgan vaqtda xona sozlamalarida o\'zgartirishingiz mumkin."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Ommaviy xona"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Har kim bu xonani topishi va qo\'shilishi mumkin. Buni istalgan vaqtda xona sozlamalarida o\'zgartirishingiz mumkin."</string>
+  <string name="screen_space_create_room_encryption_title">"Uchi-uchiga shifrlashni yoqish"</string>
+  <string name="screen_space_create_room_encryption_description">"Buni keyinroq o\'chirib bo\'lmaydi. Ko\'priklar va aksariyat botlar hali ishlamaydi."</string>
+  <string name="screen_thread_list_title">"Mavzular"</string>
+  <string name="screen_thread_list_empty_title">"Hozircha mavzular yo\'q"</string>
+  <string name="screen_thread_list_empty_description">"Istalgan xabarga javob berib mavzu boshlang"</string>
+  <string name="screen_thread_activity_title">"Mavzular faoliyati"</string>
+  <string name="screen_thread_activity_empty_title">"O\'qilmagan mavzular yo\'q"</string>
+  <string name="screen_thread_activity_empty_description">"Hammasini o\'qib chiqdingiz!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Barcha xonalardan ham olib tashlash"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Barcha xonalarga qo\'shilasizmi?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"%1$s dagi barcha xonalarga qo\'shilmoqchimisiz?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Hammaga qo\'shilish"</string>
   <string name="screen_space_settings_roles_and_permissions">"Rollar va ruxsatlar"</string>
   <string name="screen_space_settings_security_and_privacy">"Xavfsizlik va maxfiylik"</string>
 </resources>

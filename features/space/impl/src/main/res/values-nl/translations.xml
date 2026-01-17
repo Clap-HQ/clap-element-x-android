@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Kamers waar je in zit"</string>
+  <string name="space_room_list_unjoined_section_title">"Kamers waar je aan kunt deelnemen"</string>
+  <string name="screen_space_create_room">"Ruimte aanmaken"</string>
+  <string name="screen_space_remove_room">"Verwijder van space"</string>
+  <string name="screen_space_remove_room_alert_title">"Kamer verwijderen"</string>
+  <string name="screen_space_remove_room_alert_message">"Weet je zeker dat je \"%1$s\" uit deze space wilt verwijderen?"</string>
+  <string name="screen_space_remove_room_success">"%1$s verwijderd uit space"</string>
+  <string name="screen_space_create_room_visibility_header">"Kamerzichtbaarheid"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Zichtbaar voor Space leden"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"Iedereen in %1$s kan deze kamer vinden en lid worden. Alleen beheerders van deze kamer kunnen het aan een space toevoegen."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Privékamer (alleen op uitnodiging)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Alleen uitgenodigde personen kunnen deze kamer vinden en lid worden. Je kunt dit op elk moment wijzigen in de kamerinstellingen."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Publieke kamer"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Iedereen kan deze kamer vinden en lid worden. Je kunt dit op elk moment wijzigen in de kamerinstellingen."</string>
+  <string name="screen_space_create_room_encryption_title">"Eind-tot-eind-versleuteling inschakelen"</string>
+  <string name="screen_space_create_room_encryption_description">"Je kan dit later niet uitschakelen. Bruggen en de meeste bots zullen nog niet werken."</string>
+  <string name="screen_thread_list_title">"Threads"</string>
+  <string name="screen_thread_list_empty_title">"Nog geen threads"</string>
+  <string name="screen_thread_list_empty_description">"Start een thread door op een bericht te reageren"</string>
+  <string name="screen_thread_activity_title">"Thread-activiteit"</string>
+  <string name="screen_thread_activity_empty_title">"Geen ongelezen threads"</string>
+  <string name="screen_thread_activity_empty_description">"Je bent helemaal bij!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Ook uit alle kamers verwijderen"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Alle kamers betreden?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"Wil je alle kamers in %1$s betreden?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Alle betreden"</string>
   <string name="screen_space_settings_roles_and_permissions">"Rollen en rechten"</string>
 </resources>

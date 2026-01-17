@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"Kambariai, kuriuose esate"</string>
+  <string name="space_room_list_unjoined_section_title">"Kambariai, prie kurių galite prisijungti"</string>
+  <string name="screen_space_create_room">"Sukurti kambarį"</string>
+  <string name="screen_space_remove_room">"Pašalinti iš erdvės"</string>
+  <string name="screen_space_remove_room_alert_title">"Pašalinti kambarį"</string>
+  <string name="screen_space_remove_room_alert_message">"Ar tikrai norite pašalinti \"%1$s\" iš šios erdvės?"</string>
+  <string name="screen_space_remove_room_success">"%1$s pašalintas iš erdvės"</string>
+  <string name="screen_space_create_room_visibility_header">"Kambario matomumas"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"Matomas erdvės nariams"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"Bet kas %1$s gali rasti ir prisijungti prie šio kambario. Tik šio kambario administratoriai gali jį pridėti prie erdvės."</string>
+  <string name="screen_space_create_room_visibility_private_title">"Privatus kambarys (tik su kvietimu)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"Tik pakviesti žmonės gali rasti ir prisijungti prie šio kambario. Galite tai pakeisti bet kada kambario nustatymuose."</string>
+  <string name="screen_space_create_room_visibility_public_title">"Viešas kambarys"</string>
+  <string name="screen_space_create_room_visibility_public_description">"Bet kas gali rasti ir prisijungti prie šio kambario. Galite tai pakeisti bet kada kambario nustatymuose."</string>
+  <string name="screen_space_create_room_encryption_title">"Įjungti ištisąjį šifravimą"</string>
+  <string name="screen_space_create_room_encryption_description">"Vėliau negalėsite to išjungti. Tiltai ir dauguma robotų dar neveiks."</string>
+  <string name="screen_thread_list_title">"Gijos"</string>
+  <string name="screen_thread_list_empty_title">"Gijų dar nėra"</string>
+  <string name="screen_thread_list_empty_description">"Pradėkite giją atsakydami į bet kurią žinutę"</string>
+  <string name="screen_thread_activity_title">"Gijų veikla"</string>
+  <string name="screen_thread_activity_empty_title">"Nėra neskaitytų gijų"</string>
+  <string name="screen_thread_activity_empty_description">"Viską perskaitėte!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"Taip pat pašalinti iš visų kambarių"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"Prisijungti prie visų kambarių?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"Ar norite prisijungti prie visų kambarių %1$s?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"Prisijungti prie visų"</string>
+  <string name="screen_space_settings_roles_and_permissions">"Vaidmenys ir leidimai"</string>
+</resources>

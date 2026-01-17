@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"ოთახები, რომლებშიც ხართ"</string>
+  <string name="space_room_list_unjoined_section_title">"ოთახები, რომლებსაც შეგიძლიათ შეუერთდეთ"</string>
+  <string name="screen_space_create_room">"ოთახის შექმნა"</string>
+  <string name="screen_space_remove_room">"წაშლა სივრციდან"</string>
+  <string name="screen_space_remove_room_alert_title">"ოთახის წაშლა"</string>
+  <string name="screen_space_remove_room_alert_message">"დარწმუნებული ხართ, რომ გსურთ \"%1$s\" წაშლა ამ სივრციდან?"</string>
+  <string name="screen_space_remove_room_success">"%1$s წაიშალა სივრციდან"</string>
+  <string name="screen_space_create_room_visibility_header">"ოთახის ხილვადობა"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"ხილული სივრცის წევრებისთვის"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"%1$s-ში ნებისმიერს შეუძლია იპოვოს და შეუერთდეს ამ ოთახს. მხოლოდ ამ ოთახის ადმინისტრატორებს შეუძლიათ დაამატონ ის სივრცეში."</string>
+  <string name="screen_space_create_room_visibility_private_title">"პირადი ოთახი (მხოლოდ მოწვევით)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"მხოლოდ მოწვეულ ადამიანებს შეუძლიათ იპოვონ და შეუერთდნენ ამ ოთახს. თქვენ შეგიძლიათ შეცვალოთ ეს ნებისმიერ დროს ოთახის პარამეტრებში."</string>
+  <string name="screen_space_create_room_visibility_public_title">"საჯარო ოთახი"</string>
+  <string name="screen_space_create_room_visibility_public_description">"ნებისმიერს შეუძლია იპოვოს და შეუერთდეს ამ ოთახს. თქვენ შეგიძლიათ შეცვალოთ ეს ნებისმიერ დროს ოთახის პარამეტრებში."</string>
+  <string name="screen_space_create_room_encryption_title">"ბოლოდან ბოლომდე დაშიფვრის ჩართვა"</string>
+  <string name="screen_space_create_room_encryption_description">"თქვენ არ შეგიძლიათ გამორთოთ ეს მოგვიანებით. ხიდები და ბოტების უმეტესობა ჯერ არ იმუშავებს."</string>
+  <string name="screen_thread_list_title">"თემები"</string>
+  <string name="screen_thread_list_empty_title">"ჯერ თემები არ არის"</string>
+  <string name="screen_thread_list_empty_description">"დაიწყეთ თემა ნებისმიერ შეტყობინებაზე პასუხით"</string>
+  <string name="screen_thread_activity_title">"თემების აქტივობა"</string>
+  <string name="screen_thread_activity_empty_title">"წაუკითხავი თემები არ არის"</string>
+  <string name="screen_thread_activity_empty_description">"ყველაფერი წაკითხული გაქვთ!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"ასევე წაშლა ყველა ოთახიდან"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"ყველა ოთახში გაწევრიანება?"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"გსურთ გაწევრიანდეთ ყველა ოთახში %1$s-ში?"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"ყველაში გაწევრიანება"</string>
   <string name="screen_space_settings_roles_and_permissions">"როლები და ნებართვები"</string>
 </resources>

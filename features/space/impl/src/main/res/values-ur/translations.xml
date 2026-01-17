@@ -1,4 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+  <string name="space_room_list_joined_section_title">"آپ جن کمروں میں ہیں"</string>
+  <string name="space_room_list_unjoined_section_title">"کمرے جن میں آپ شامل ہو سکتے ہیں"</string>
+  <string name="screen_space_create_room">"کمرہ بنائیں"</string>
+  <string name="screen_space_remove_room">"اسپیس سے ہٹائیں"</string>
+  <string name="screen_space_remove_room_alert_title">"کمرہ ہٹائیں"</string>
+  <string name="screen_space_remove_room_alert_message">"کیا آپ واقعی \"%1$s\" کو اس اسپیس سے ہٹانا چاہتے ہیں؟"</string>
+  <string name="screen_space_remove_room_success">"%1$s اسپیس سے ہٹا دیا گیا"</string>
+  <string name="screen_space_create_room_visibility_header">"کمرے کی مرئیت"</string>
+  <string name="screen_space_create_room_visibility_space_members_title">"اسپیس کے اراکین کو نظر آتا ہے"</string>
+  <string name="screen_space_create_room_visibility_space_members_description">"%1$s میں کوئی بھی اس کمرے کو تلاش کر کے شامل ہو سکتا ہے۔ صرف اس کمرے کے منتظمین اسے اسپیس میں شامل کر سکتے ہیں۔"</string>
+  <string name="screen_space_create_room_visibility_private_title">"نجی کمرہ (صرف دعوت نامے سے)"</string>
+  <string name="screen_space_create_room_visibility_private_description">"صرف مدعو افراد اس کمرے کو تلاش کر کے شامل ہو سکتے ہیں۔ آپ اسے کمرے کی ترتیبات میں کسی بھی وقت تبدیل کر سکتے ہیں۔"</string>
+  <string name="screen_space_create_room_visibility_public_title">"عوامی کمرہ"</string>
+  <string name="screen_space_create_room_visibility_public_description">"کوئی بھی اس کمرے کو تلاش کر کے شامل ہو سکتا ہے۔ آپ اسے کمرے کی ترتیبات میں کسی بھی وقت تبدیل کر سکتے ہیں۔"</string>
+  <string name="screen_space_create_room_encryption_title">"اینڈ ٹو اینڈ انکرپشن فعال کریں"</string>
+  <string name="screen_space_create_room_encryption_description">"آپ اسے بعد میں غیر فعال نہیں کر سکتے۔ پل اور زیادہ تر بوٹس ابھی تک کام نہیں کریں گے۔"</string>
+  <string name="screen_thread_list_title">"تھریڈز"</string>
+  <string name="screen_thread_list_empty_title">"ابھی تک کوئی تھریڈ نہیں"</string>
+  <string name="screen_thread_list_empty_description">"کسی بھی پیغام کا جواب دے کر تھریڈ شروع کریں"</string>
+  <string name="screen_thread_activity_title">"تھریڈ سرگرمی"</string>
+  <string name="screen_thread_activity_empty_title">"کوئی غیر پڑھے تھریڈز نہیں"</string>
+  <string name="screen_thread_activity_empty_description">"آپ نے سب پڑھ لیا!"</string>
+  <string name="screen_bottom_sheet_manage_room_member_remove_from_all_rooms">"تمام کمروں سے بھی ہٹائیں"</string>
+  <string name="screen_join_all_rooms_confirmation_title">"تمام کمروں میں شامل ہوں؟"</string>
+  <string name="screen_join_all_rooms_confirmation_subtitle">"کیا آپ %1$s میں تمام کمروں میں شامل ہونا چاہتے ہیں؟"</string>
+  <string name="screen_join_all_rooms_confirmation_action">"سب میں شامل ہوں"</string>
   <string name="screen_space_settings_roles_and_permissions">"کردارہا اور اجازتیں"</string>
 </resources>
