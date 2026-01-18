@@ -18,6 +18,7 @@ import dev.zacsweers.metro.AssistedInject
 import io.element.android.features.login.impl.accountprovider.AccountProviderDataSource
 import io.element.android.features.login.impl.login.LoginHelper
 import io.element.android.libraries.architecture.Presenter
+import io.element.android.libraries.preferences.api.store.AppPreferencesStore
 import kotlinx.coroutines.launch
 
 @AssistedInject
@@ -25,6 +26,7 @@ class ConfirmAccountProviderPresenter(
     @Assisted private val params: Params,
     private val accountProviderDataSource: AccountProviderDataSource,
     private val loginHelper: LoginHelper,
+    private val appPreferencesStore: AppPreferencesStore,
 ) : Presenter<ConfirmAccountProviderState> {
     data class Params(
         val isAccountCreation: Boolean,
@@ -41,6 +43,11 @@ class ConfirmAccountProviderPresenter(
         val localCoroutineScope = rememberCoroutineScope()
 
         val loginMode by loginHelper.collectLoginMode()
+
+        // Developer Mode: showCustomHomeserver 설정 연동
+        val showCustomHomeserver by appPreferencesStore
+            .isShowCustomHomeserverEnabledFlow()
+            .collectAsState(initial = false)
 
         fun handleEvent(event: ConfirmAccountProviderEvents) {
             when (event) {
@@ -59,6 +66,7 @@ class ConfirmAccountProviderPresenter(
             accountProvider = accountProvider,
             isAccountCreation = params.isAccountCreation,
             loginMode = loginMode,
+            showCustomHomeserver = showCustomHomeserver,
             eventSink = ::handleEvent,
         )
     }

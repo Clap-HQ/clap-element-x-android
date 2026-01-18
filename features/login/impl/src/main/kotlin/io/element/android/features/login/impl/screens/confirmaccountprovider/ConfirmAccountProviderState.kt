@@ -16,6 +16,7 @@ data class ConfirmAccountProviderState(
     val accountProvider: AccountProvider,
     val isAccountCreation: Boolean,
     val loginMode: AsyncData<LoginMode>,
+    val showCustomHomeserver: Boolean,
     val eventSink: (ConfirmAccountProviderEvents) -> Unit
 ) {
     val submitEnabled: Boolean get() = accountProvider.url.isNotEmpty() && (loginMode is AsyncData.Uninitialized || loginMode is AsyncData.Loading)

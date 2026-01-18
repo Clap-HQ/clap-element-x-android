@@ -86,14 +86,17 @@ fun ConfirmAccountProviderView(
                         .fillMaxWidth()
                         .testTag(TestTags.loginContinue)
                 )
-                TextButton(
-                    text = stringResource(id = R.string.screen_account_provider_change),
-                    onClick = onChange,
-                    enabled = !isLoading,
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .testTag(TestTags.loginChangeServer)
-                )
+                // Developer Mode: showCustomHomeserver 설정에 따라 버튼 표시
+                if (state.showCustomHomeserver) {
+                    TextButton(
+                        text = stringResource(id = R.string.screen_account_provider_change),
+                        onClick = onChange,
+                        enabled = !isLoading,
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .testTag(TestTags.loginChangeServer)
+                    )
+                }
             }
         }
     ) {

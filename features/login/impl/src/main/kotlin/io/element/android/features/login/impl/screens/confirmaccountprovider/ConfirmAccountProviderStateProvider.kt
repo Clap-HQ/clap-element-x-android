@@ -33,10 +33,12 @@ private fun aConfirmAccountProviderState(
     accountProvider: AccountProvider = anAccountProvider(),
     isAccountCreation: Boolean = false,
     loginMode: AsyncData<LoginMode> = AsyncData.Uninitialized,
+    showCustomHomeserver: Boolean = false,
     eventSink: (ConfirmAccountProviderEvents) -> Unit = {},
 ) = ConfirmAccountProviderState(
     accountProvider = accountProvider,
     isAccountCreation = isAccountCreation,
     loginMode = loginMode,
+    showCustomHomeserver = showCustomHomeserver,
     eventSink = eventSink
 )
