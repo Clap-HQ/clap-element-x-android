@@ -29,6 +29,7 @@ import io.element.android.features.login.impl.login.LoginHelper
 import io.element.android.features.rageshake.api.RageshakeFeatureAvailability
 import io.element.android.libraries.architecture.Presenter
 import io.element.android.libraries.core.meta.BuildMeta
+import io.element.android.libraries.preferences.api.store.AppPreferencesStore
 import io.element.android.libraries.sessionstorage.api.SessionStore
 import io.element.android.libraries.ui.utils.MultipleTapToUnlock
 import kotlinx.coroutines.launch
@@ -44,6 +45,7 @@ class OnBoardingPresenter(
     private val onBoardingLogoResIdProvider: OnBoardingLogoResIdProvider,
     private val sessionStore: SessionStore,
     private val accountProviderDataSource: AccountProviderDataSource,
+    private val appPreferencesStore: AppPreferencesStore,
 ) : Presenter<OnBoardingState> {
     @AssistedFactory
     interface Factory {
@@ -84,8 +86,13 @@ class OnBoardingPresenter(
             // Else use the account provider passed in the params if any and if allowed
             forcedAccountProvider ?: linkAccountProvider
         }
-        val canLoginWithQrCode by produceState(initialValue = false, linkAccountProvider) {
-            value = linkAccountProvider == null
+        // Developer Mode: showQRCodeLogin 설정 연동
+        val showQRCodeLogin by appPreferencesStore
+            .isShowQRCodeLoginEnabledFlow()
+            .collectAsState(initial = false)
+
+        val canLoginWithQrCode by produceState(initialValue = false, linkAccountProvider, showQRCodeLogin) {
+            value = linkAccountProvider == null && showQRCodeLogin
         }
         val canReportBug by remember { rageshakeFeatureAvailability.isAvailable() }.collectAsState(false)
         var showReportBug by rememberSaveable { mutableStateOf(false) }
