@@ -38,5 +38,21 @@ interface AppPreferencesStore {
     suspend fun setTracingLogPacks(targets: Set<TraceLogPack>)
     fun getTracingLogPacksFlow(): Flow<Set<TraceLogPack>>
 
+    // Developer Mode Settings
+    suspend fun setShowCustomHomeserver(enabled: Boolean)
+    fun isShowCustomHomeserverEnabledFlow(): Flow<Boolean>
+
+    suspend fun setShowQRCodeLogin(enabled: Boolean)
+    fun isShowQRCodeLoginEnabledFlow(): Flow<Boolean>
+
+    suspend fun setGroupSpaceRooms(enabled: Boolean)
+    fun isGroupSpaceRoomsEnabledFlow(): Flow<Boolean>
+
+    suspend fun setSpaceSettingsEnabled(enabled: Boolean)
+    fun isSpaceSettingsEnabledFlow(): Flow<Boolean>
+
+    suspend fun setShowDeveloperSettings(enabled: Boolean)
+    fun isShowDeveloperSettingsEnabledFlow(): Flow<Boolean>
+
     suspend fun reset()
 }

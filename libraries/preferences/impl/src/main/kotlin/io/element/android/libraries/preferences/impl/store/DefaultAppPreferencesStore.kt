@@ -31,6 +31,13 @@ private val timelineMediaPreviewValueKey = stringPreferencesKey("timelineMediaPr
 private val logLevelKey = stringPreferencesKey("logLevel")
 private val traceLogPacksKey = stringPreferencesKey("traceLogPacks")
 
+// Developer Mode Settings Keys
+private val showCustomHomeserverKey = booleanPreferencesKey("developerMode_showCustomHomeserver")
+private val showQRCodeLoginKey = booleanPreferencesKey("developerMode_showQRCodeLogin")
+private val groupSpaceRoomsKey = booleanPreferencesKey("developerMode_groupSpaceRooms")
+private val spaceSettingsEnabledKey = booleanPreferencesKey("developerMode_spaceSettingsEnabled")
+private val showDeveloperSettingsKey = booleanPreferencesKey("developerMode_showDeveloperSettings")
+
 @ContributesBinding(AppScope::class)
 class DefaultAppPreferencesStore(
     private val buildMeta: BuildMeta,
@@ -146,6 +153,67 @@ class DefaultAppPreferencesStore(
 
     override suspend fun reset() {
         store.edit { it.clear() }
+    }
+
+    // Developer Mode Settings Implementation
+    override suspend fun setShowCustomHomeserver(enabled: Boolean) {
+        store.edit { prefs ->
+            prefs[showCustomHomeserverKey] = enabled
+        }
+    }
+
+    override fun isShowCustomHomeserverEnabledFlow(): Flow<Boolean> {
+        return store.data.map { prefs ->
+            prefs[showCustomHomeserverKey] ?: false
+        }
+    }
+
+    override suspend fun setShowQRCodeLogin(enabled: Boolean) {
+        store.edit { prefs ->
+            prefs[showQRCodeLoginKey] = enabled
+        }
+    }
+
+    override fun isShowQRCodeLoginEnabledFlow(): Flow<Boolean> {
+        return store.data.map { prefs ->
+            prefs[showQRCodeLoginKey] ?: false
+        }
+    }
+
+    override suspend fun setGroupSpaceRooms(enabled: Boolean) {
+        store.edit { prefs ->
+            prefs[groupSpaceRoomsKey] = enabled
+        }
+    }
+
+    override fun isGroupSpaceRoomsEnabledFlow(): Flow<Boolean> {
+        return store.data.map { prefs ->
+            prefs[groupSpaceRoomsKey] ?: true
+        }
+    }
+
+    override suspend fun setSpaceSettingsEnabled(enabled: Boolean) {
+        store.edit { prefs ->
+            prefs[spaceSettingsEnabledKey] = enabled
+        }
+    }
+
+    override fun isSpaceSettingsEnabledFlow(): Flow<Boolean> {
+        return store.data.map { prefs ->
+            prefs[spaceSettingsEnabledKey] ?: true
+        }
+    }
+
+    override suspend fun setShowDeveloperSettings(enabled: Boolean) {
+        store.edit { prefs ->
+            prefs[showDeveloperSettingsKey] = enabled
+        }
+    }
+
+    override fun isShowDeveloperSettingsEnabledFlow(): Flow<Boolean> {
+        return store.data.map { prefs ->
+            prefs[showDeveloperSettingsKey] ?: false
+        }
     }
 }
 

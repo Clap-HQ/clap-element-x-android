@@ -79,4 +79,19 @@ If you proceed, some of your settings may change."</string>
   <string name="troubleshoot_notifications_entry_point_push_history_title">"Push history"</string>
   <string name="troubleshoot_notifications_entry_point_section">"Troubleshoot"</string>
   <string name="troubleshoot_notifications_entry_point_title">"Troubleshoot notifications"</string>
+  <!-- Developer Mode Screen -->
+  <string name="screen_developer_mode_title">"Developer Mode"</string>
+  <string name="screen_developer_mode_section_authentication">"Authentication"</string>
+  <string name="screen_developer_mode_section_spaces">"Spaces"</string>
+  <string name="screen_developer_mode_section_settings">"Settings"</string>
+  <string name="screen_developer_mode_show_custom_homeserver">"Show Custom Homeserver"</string>
+  <string name="screen_developer_mode_show_custom_homeserver_description">"Show the change account provider button in sign-in flow"</string>
+  <string name="screen_developer_mode_show_qr_code_login">"Show QR Code Login"</string>
+  <string name="screen_developer_mode_show_qr_code_login_description">"Show the sign in with QR code button"</string>
+  <string name="screen_developer_mode_group_space_rooms">"Group Space Rooms"</string>
+  <string name="screen_developer_mode_group_space_rooms_description">"Hide space-affiliated rooms from chat tab and show them under space cells instead"</string>
+  <string name="screen_developer_mode_space_settings_enabled">"Space Settings"</string>
+  <string name="screen_developer_mode_space_settings_enabled_description">"Enable space settings and permissions management features"</string>
+  <string name="screen_developer_mode_show_developer_settings">"Show Developer Settings"</string>
+  <string name="screen_developer_mode_show_developer_settings_description">"Show View Source, Hide Invite Avatars, Timeline Media, Labs, and Report a Problem options"</string>
 </resources>

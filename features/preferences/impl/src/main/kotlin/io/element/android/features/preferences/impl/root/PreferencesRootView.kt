@@ -59,6 +59,7 @@ fun PreferencesRootView(
     onOpenRageShake: () -> Unit,
     onOpenLockScreenSettings: () -> Unit,
     onOpenAbout: () -> Unit,
+    onOpenDeveloperMode: () -> Unit,
     onOpenDeveloperSettings: () -> Unit,
     onOpenAdvancedSettings: () -> Unit,
     onOpenLabs: () -> Unit,
@@ -113,6 +114,7 @@ fun PreferencesRootView(
             onOpenAnalytics = onOpenAnalytics,
             onOpenRageShake = onOpenRageShake,
             onOpenAdvancedSettings = onOpenAdvancedSettings,
+            onOpenDeveloperMode = onOpenDeveloperMode,
             onOpenDeveloperSettings = onOpenDeveloperSettings,
             onOpenLabs = onOpenLabs,
             onSignOutClick = onSignOutClick,
@@ -243,8 +245,9 @@ private fun ColumnScope.GeneralSection(
     onOpenAnalytics: () -> Unit,
     onOpenRageShake: () -> Unit,
     onOpenAdvancedSettings: () -> Unit,
-    onOpenLabs: () -> Unit,
+    onOpenDeveloperMode: () -> Unit,
     onOpenDeveloperSettings: () -> Unit,
+    onOpenLabs: () -> Unit,
     onSignOutClick: () -> Unit,
     onDeactivateClick: () -> Unit,
 ) {
@@ -297,6 +300,7 @@ private fun ColumnScope.GeneralSection(
     }
     // Put developer settings at the end, so nothing bad happens if the user clicks 8 times to enable the entry
     if (state.showDeveloperSettings) {
+        DeveloperModePreferencesView(onOpenDeveloperMode)
         DeveloperPreferencesView(onOpenDeveloperSettings)
     }
 }
@@ -330,6 +334,15 @@ private fun ColumnScope.Footer(
 }
 
 @Composable
+private fun DeveloperModePreferencesView(onOpenDeveloperMode: () -> Unit) {
+    ListItem(
+        headlineContent = { Text(stringResource(id = R.string.screen_developer_mode_title)) },
+        leadingContent = ListItemContent.Icon(IconSource.Vector(CompoundIcons.Admin())),
+        onClick = onOpenDeveloperMode
+    )
+}
+
+@Composable
 private fun DeveloperPreferencesView(onOpenDeveloperSettings: () -> Unit) {
     ListItem(
         headlineContent = { Text(stringResource(id = CommonStrings.common_developer_options)) },
@@ -357,6 +370,7 @@ private fun ContentToPreview(matrixUser: MatrixUser) {
         onAddAccountClick = {},
         onOpenAnalytics = {},
         onOpenRageShake = {},
+        onOpenDeveloperMode = {},
         onOpenDeveloperSettings = {},
         onOpenAdvancedSettings = {},
         onOpenLabs = {},

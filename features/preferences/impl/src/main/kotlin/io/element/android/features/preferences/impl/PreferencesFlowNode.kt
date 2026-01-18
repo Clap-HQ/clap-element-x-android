@@ -30,6 +30,7 @@ import io.element.android.features.preferences.impl.advanced.AdvancedSettingsNod
 import io.element.android.features.preferences.impl.analytics.AnalyticsSettingsNode
 import io.element.android.features.preferences.impl.blockedusers.BlockedUsersNode
 import io.element.android.features.preferences.impl.developer.DeveloperSettingsNode
+import io.element.android.features.preferences.impl.developermode.DeveloperModeNode
 import io.element.android.features.preferences.impl.labs.LabsNode
 import io.element.android.features.preferences.impl.notifications.NotificationSettingsNode
 import io.element.android.features.preferences.impl.notifications.edit.EditDefaultNotificationSettingNode
@@ -70,6 +71,9 @@ class PreferencesFlowNode(
     sealed interface NavTarget : Parcelable {
         @Parcelize
         data object Root : NavTarget
+
+        @Parcelize
+        data object DeveloperMode : NavTarget
 
         @Parcelize
         data object DeveloperSettings : NavTarget
@@ -143,6 +147,10 @@ class PreferencesFlowNode(
                         backstack.push(NavTarget.About)
                     }
 
+                    override fun navigateToDeveloperMode() {
+                        backstack.push(NavTarget.DeveloperMode)
+                    }
+
                     override fun navigateToDeveloperSettings() {
                         backstack.push(NavTarget.DeveloperSettings)
                     }
@@ -184,6 +192,14 @@ class PreferencesFlowNode(
                     }
                 }
                 createNode<PreferencesRootNode>(buildContext, plugins = listOf(callback))
+            }
+            NavTarget.DeveloperMode -> {
+                val developerModeCallback = object : DeveloperModeNode.Callback {
+                    override fun onBackClick() {
+                        backstack.pop()
+                    }
+                }
+                createNode<DeveloperModeNode>(buildContext, listOf(developerModeCallback))
             }
             NavTarget.DeveloperSettings -> {
                 val developerSettingsCallback = object : DeveloperSettingsNode.Callback {
