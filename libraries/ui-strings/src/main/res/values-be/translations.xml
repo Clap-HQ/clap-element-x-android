@@ -111,6 +111,7 @@
   <string name="action_share">"Падзяліцца"</string>
   <string name="action_share_link">"Абагуліць спасылку"</string>
   <string name="action_show">"Паказаць"</string>
+  <string name="action_sign_in">"Увайсці"</string>
   <string name="action_sign_in_again">"Увайдзіце яшчэ раз"</string>
   <string name="action_signout">"Выйсці"</string>
   <string name="action_signout_anyway">"Усё роўна выйсці"</string>

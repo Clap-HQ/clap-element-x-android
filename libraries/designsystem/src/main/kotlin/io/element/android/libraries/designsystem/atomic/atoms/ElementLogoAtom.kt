@@ -97,7 +97,7 @@ fun ElementLogoAtom(
                     shape = CircleShape,
                     ambientColor = Color(0x80000000),
                 ),
-            painter = painterResource(id = R.drawable.element_logo),
+            painter = painterResource(id = R.drawable.clap_logo),
             contentDescription = null
         )
     }

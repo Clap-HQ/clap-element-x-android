@@ -151,6 +151,7 @@
   <string name="action_share">"Megosztás"</string>
   <string name="action_share_link">"Hivatkozás megosztása"</string>
   <string name="action_show">"Megjelenítés"</string>
+  <string name="action_sign_in">"Bejelentkezés"</string>
   <string name="action_sign_in_again">"Jelentkezzen be újra"</string>
   <string name="action_signout">"Kijelentkezés"</string>
   <string name="action_signout_anyway">"Kijelentkezés mindenképp"</string>

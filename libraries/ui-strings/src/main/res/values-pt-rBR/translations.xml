@@ -152,6 +152,7 @@
   <string name="action_share">"Compartilhar"</string>
   <string name="action_share_link">"Compartilhar link"</string>
   <string name="action_show">"Mostrar"</string>
+  <string name="action_sign_in">"Entrar"</string>
   <string name="action_sign_in_again">"Entrar novamente"</string>
   <string name="action_signout">"Sair"</string>
   <string name="action_signout_anyway">"Sair mesmo assim"</string>

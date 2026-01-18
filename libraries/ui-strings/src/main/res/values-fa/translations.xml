@@ -144,6 +144,7 @@
   <string name="action_share">"هم‌رسانی"</string>
   <string name="action_share_link">"هم‌رسانی پیوند"</string>
   <string name="action_show">"نمایش"</string>
+  <string name="action_sign_in">"ورود"</string>
   <string name="action_sign_in_again">"ورود دوباره"</string>
   <string name="action_signout">"خروج"</string>
   <string name="action_signout_anyway">"خروج به هر صورت"</string>

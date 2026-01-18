@@ -151,6 +151,7 @@
   <string name="action_share">"Jaa"</string>
   <string name="action_share_link">"Jaa linkki"</string>
   <string name="action_show">"Näytä"</string>
+  <string name="action_sign_in">"Kirjaudu sisään"</string>
   <string name="action_sign_in_again">"Kirjaudu uudelleen"</string>
   <string name="action_signout">"Kirjaudu ulos"</string>
   <string name="action_signout_anyway">"Kirjaudu ulos silti"</string>

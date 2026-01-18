@@ -153,6 +153,7 @@
   <string name="action_share">"Podijeli"</string>
   <string name="action_share_link">"Podijeli poveznicu"</string>
   <string name="action_show">"Prikaži"</string>
+  <string name="action_sign_in">"Prijava"</string>
   <string name="action_sign_in_again">"Ponovno se prijavite"</string>
   <string name="action_signout">"Odjava"</string>
   <string name="action_signout_anyway">"Svejedno se odjavi"</string>

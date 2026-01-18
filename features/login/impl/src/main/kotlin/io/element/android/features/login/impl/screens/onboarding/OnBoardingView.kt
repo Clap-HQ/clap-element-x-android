@@ -120,7 +120,6 @@ private fun AddFirstAccountScaffold(
 ) {
     OnBoardingPage(
         modifier = modifier,
-        renderBackground = state.onBoardingLogoResId == null,
         content = {
             if (state.onBoardingLogoResId != null) {
                 OnBoardingLogo(
@@ -189,13 +188,6 @@ private fun OnBoardingContent(state: OnBoardingState) {
                     style = ElementTheme.typography.fontHeadingLgBold,
                     textAlign = TextAlign.Center
                 )
-                Spacer(modifier = Modifier.height(8.dp))
-                Text(
-                    text = stringResource(id = R.string.screen_onboarding_welcome_message, state.productionApplicationName),
-                    color = ElementTheme.colors.textSecondary,
-                    style = ElementTheme.typography.fontBodyLgRegular.copy(fontSize = 17.sp),
-                    textAlign = TextAlign.Center
-                )
             }
         }
     }
@@ -250,7 +242,7 @@ private fun OnBoardingButtons(
         val defaultAccountProvider = state.defaultAccountProvider
         if (defaultAccountProvider == null) {
             Button(
-                text = stringResource(id = signInButtonStringRes),
+                text = stringResource(id = CommonStrings.action_sign_in),
                 onClick = {
                     onSignIn(state.mustChooseAccountProvider)
                 },

@@ -151,6 +151,7 @@
   <string name="action_share">"Del"</string>
   <string name="action_share_link">"Del link"</string>
   <string name="action_show">"Vis"</string>
+  <string name="action_sign_in">"Log ind"</string>
   <string name="action_sign_in_again">"Log ind igen"</string>
   <string name="action_signout">"Log ud"</string>
   <string name="action_signout_anyway">"Log ud alligevel"</string>

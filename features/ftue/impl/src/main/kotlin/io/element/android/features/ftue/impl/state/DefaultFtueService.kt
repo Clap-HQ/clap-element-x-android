@@ -124,7 +124,8 @@ class DefaultFtueService(
     }
 
     private suspend fun needsAnalyticsOptIn(): Boolean {
-        return analyticsService.didAskUserConsentFlow.first().not()
+        // Clap: Analytics opt-in 화면 비활성화
+        return false
     }
 
     private suspend fun shouldAskNotificationPermissions(): Boolean {

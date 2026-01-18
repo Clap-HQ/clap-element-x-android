@@ -124,6 +124,7 @@
   <string name="action_share">"Κοινή χρήση"</string>
   <string name="action_share_link">"Κοινή χρήση συνδέσμου"</string>
   <string name="action_show">"Εμφάνιση"</string>
+  <string name="action_sign_in">"Σύνδεση"</string>
   <string name="action_sign_in_again">"Συνδέσου ξανά"</string>
   <string name="action_signout">"Αποσύνδεση"</string>
   <string name="action_signout_anyway">"Αποσύνδεση ούτως ή άλλως"</string>

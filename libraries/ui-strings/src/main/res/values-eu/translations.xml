@@ -131,6 +131,7 @@
   <string name="action_share">"Partekatu"</string>
   <string name="action_share_link">"Partekatu esteka"</string>
   <string name="action_show">"Erakutsi"</string>
+  <string name="action_sign_in">"Hasi saioa"</string>
   <string name="action_sign_in_again">"Hasi saioa berriro"</string>
   <string name="action_signout">"Amaitu saioa"</string>
   <string name="action_signout_anyway">"Amaitu saioa edonola ere"</string>

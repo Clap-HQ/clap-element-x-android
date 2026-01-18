@@ -134,6 +134,7 @@
   <string name="action_share">"Delen"</string>
   <string name="action_share_link">"Link delen"</string>
   <string name="action_show">"Toon"</string>
+  <string name="action_sign_in">"Inloggen"</string>
   <string name="action_sign_in_again">"Log opnieuw in"</string>
   <string name="action_signout">"Uitloggen"</string>
   <string name="action_signout_anyway">"Toch uitloggen"</string>

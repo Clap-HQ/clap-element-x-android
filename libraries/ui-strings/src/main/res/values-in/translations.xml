@@ -133,6 +133,7 @@
   <string name="action_share">"Bagikan"</string>
   <string name="action_share_link">"Bagikan tautan"</string>
   <string name="action_show">"Tampilkan"</string>
+  <string name="action_sign_in">"Masuk"</string>
   <string name="action_sign_in_again">"Masuk lagi"</string>
   <string name="action_signout">"Keluar dari akun"</string>
   <string name="action_signout_anyway">"Keluar saja"</string>

@@ -122,6 +122,7 @@
   <string name="action_share">"Compartir"</string>
   <string name="action_share_link">"Compartir enlace"</string>
   <string name="action_show">"Mostrar"</string>
+  <string name="action_sign_in">"Iniciar sesión"</string>
   <string name="action_sign_in_again">"Inicia sesión de nuevo"</string>
   <string name="action_signout">"Cerrar sesión"</string>
   <string name="action_signout_anyway">"Cerrar sesión de todos modos"</string>

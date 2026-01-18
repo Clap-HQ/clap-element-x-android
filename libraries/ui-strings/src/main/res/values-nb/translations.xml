@@ -150,6 +150,7 @@
   <string name="action_share">"Dele"</string>
   <string name="action_share_link">"Dele lenke"</string>
   <string name="action_show">"Vis"</string>
+  <string name="action_sign_in">"Logg på"</string>
   <string name="action_sign_in_again">"Logg på igjen"</string>
   <string name="action_signout">"Logg ut"</string>
   <string name="action_signout_anyway">"Logg ut likevel"</string>

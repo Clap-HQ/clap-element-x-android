@@ -151,6 +151,7 @@
   <string name="action_share">"Condividi"</string>
   <string name="action_share_link">"Condividi collegamento"</string>
   <string name="action_show">"Mostra"</string>
+  <string name="action_sign_in">"Accedi"</string>
   <string name="action_sign_in_again">"Accedi di nuovo"</string>
   <string name="action_signout">"Disconnetti"</string>
   <string name="action_signout_anyway">"Disconnetti comunque"</string>

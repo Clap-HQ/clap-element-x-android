@@ -155,6 +155,7 @@
   <string name="action_share">"Rhannu"</string>
   <string name="action_share_link">"Rhannwch ddolen"</string>
   <string name="action_show">"Dangos"</string>
+  <string name="action_sign_in">"Mewngofnodi"</string>
   <string name="action_sign_in_again">"Mewngofnodi eto"</string>
   <string name="action_signout">"Allgofnodi"</string>
   <string name="action_signout_anyway">"Allgofnodi beth bynnag"</string>

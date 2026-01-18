@@ -112,6 +112,7 @@
   <string name="action_share">"Споделяне"</string>
   <string name="action_share_link">"Споделяне на връзката"</string>
   <string name="action_show">"Показване"</string>
+  <string name="action_sign_in">"Влизане"</string>
   <string name="action_sign_in_again">"Влизане отново"</string>
   <string name="action_signout">"Изход"</string>
   <string name="action_signout_anyway">"Излизане въпреки това"</string>

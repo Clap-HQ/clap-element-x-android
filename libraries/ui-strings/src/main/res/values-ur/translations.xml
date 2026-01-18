@@ -108,6 +108,7 @@
   <string name="action_send_message">"پیغام بھیجیں"</string>
   <string name="action_share">"اشتراک کریں"</string>
   <string name="action_share_link">"ربط کا اشتراک کریں"</string>
+  <string name="action_sign_in">"داخل ہوں"</string>
   <string name="action_sign_in_again">"دوبارہ داخل ہوں"</string>
   <string name="action_signout">"خارج ہوں"</string>
   <string name="action_signout_anyway">"بہرحال خارج ہوں"</string>

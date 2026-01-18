@@ -116,6 +116,7 @@
   <string name="action_share">"Paylaş"</string>
   <string name="action_share_link">"Linki paylaş"</string>
   <string name="action_show">"Göster"</string>
+  <string name="action_sign_in">"Oturum aç"</string>
   <string name="action_sign_in_again">"Tekrar oturum açın"</string>
   <string name="action_signout">"Oturumu kapat"</string>
   <string name="action_signout_anyway">"Yine de çıkış yap"</string>

@@ -153,6 +153,7 @@
   <string name="action_share">"Поделиться"</string>
   <string name="action_share_link">"Поделиться ссылкой"</string>
   <string name="action_show">"Показать"</string>
+  <string name="action_sign_in">"Войти"</string>
   <string name="action_sign_in_again">"Повторите вход"</string>
   <string name="action_signout">"Выйти"</string>
   <string name="action_signout_anyway">"Все равно выйти"</string>

@@ -144,6 +144,7 @@
   <string name="action_share">"Ulashish"</string>
   <string name="action_share_link">"Havolani ulashing"</string>
   <string name="action_show">"Koʻrsatish"</string>
+  <string name="action_sign_in">"Kirish"</string>
   <string name="action_sign_in_again">"Qaytadan kiring"</string>
   <string name="action_signout">"Tizimdan chiqish"</string>
   <string name="action_signout_anyway">"Baribir tizimdan chiqing"</string>

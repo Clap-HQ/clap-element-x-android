@@ -151,6 +151,7 @@
   <string name="action_share">"Jaga"</string>
   <string name="action_share_link">"Jaga linki"</string>
   <string name="action_show">"Näita"</string>
+  <string name="action_sign_in">"Logi sisse"</string>
   <string name="action_sign_in_again">"Logi uuesti sisse"</string>
   <string name="action_signout">"Logi välja"</string>
   <string name="action_signout_anyway">"Ikkagi logi välja"</string>

@@ -146,6 +146,7 @@
   <string name="action_share">"Поділитися"</string>
   <string name="action_share_link">"Поділитися посиланням"</string>
   <string name="action_show">"Показати"</string>
+  <string name="action_sign_in">"Увійти"</string>
   <string name="action_sign_in_again">"Увійдіть знову"</string>
   <string name="action_signout">"Вийти"</string>
   <string name="action_signout_anyway">"Все одно вийти"</string>

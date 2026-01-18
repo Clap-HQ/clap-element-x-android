@@ -153,6 +153,7 @@
   <string name="action_share">"Teilen"</string>
   <string name="action_share_link">"Link teilen"</string>
   <string name="action_show">"Zeige"</string>
+  <string name="action_sign_in">"Anmelden"</string>
   <string name="action_sign_in_again">"Erneut anmelden"</string>
   <string name="action_signout">"Abmelden"</string>
   <string name="action_signout_anyway">"Trotzdem abmelden"</string>

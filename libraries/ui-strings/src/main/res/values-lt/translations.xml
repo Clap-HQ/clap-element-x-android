@@ -52,6 +52,7 @@
   <string name="action_send_message">"Siųsti žinutę"</string>
   <string name="action_share">"Dalintis"</string>
   <string name="action_share_link">"Bendrinti nuorodą"</string>
+  <string name="action_sign_in">"Prisijungti"</string>
   <string name="action_sign_in_again">"Prisijungti vėl"</string>
   <string name="action_signout">"Atsijungti"</string>
   <string name="action_signout_anyway">"Atsijungti vis tiek"</string>

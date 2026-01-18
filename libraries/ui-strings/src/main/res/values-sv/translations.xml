@@ -142,6 +142,7 @@
   <string name="action_share">"Dela"</string>
   <string name="action_share_link">"Dela länk"</string>
   <string name="action_show">"Visa"</string>
+  <string name="action_sign_in">"Logga in"</string>
   <string name="action_sign_in_again">"Logga in igen"</string>
   <string name="action_signout">"Logga ut"</string>
   <string name="action_signout_anyway">"Logga ut ändå"</string>

@@ -18,6 +18,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.PreviewParameter
 import androidx.compose.ui.unit.dp
+import io.element.android.compound.theme.ElementTheme
 import io.element.android.compound.tokens.generated.CompoundIcons
 import io.element.android.features.login.impl.R
 import io.element.android.features.login.impl.login.LoginModeView
@@ -54,25 +55,20 @@ fun ConfirmAccountProviderView(
 
     HeaderFooterPage(
         modifier = modifier,
+        containerColor = ElementTheme.colors.bgCanvasClap,
         header = {
             IconTitleSubtitleMolecule(
                 modifier = Modifier.padding(top = 60.dp),
                 iconStyle = BigIcon.Style.Default(CompoundIcons.UserProfileSolid()),
                 title = stringResource(
                     id = if (state.isAccountCreation) {
-                        R.string.screen_account_provider_signup_title
+                        R.string.screen_create_account_title
                     } else {
-                        R.string.screen_account_provider_signin_title
+                        CommonStrings.action_sign_in
                     },
                     state.accountProvider.title
                 ),
-                subTitle = stringResource(
-                    id = if (state.isAccountCreation) {
-                        R.string.screen_account_provider_signup_subtitle
-                    } else {
-                        R.string.screen_account_provider_signin_subtitle
-                    },
-                )
+                subTitle = null
             )
         },
         footer = {

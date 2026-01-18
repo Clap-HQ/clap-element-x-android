@@ -149,6 +149,7 @@
   <string name="action_share">"分享"</string>
   <string name="action_share_link">"分享連結"</string>
   <string name="action_show">"顯示"</string>
+  <string name="action_sign_in">"登入"</string>
   <string name="action_sign_in_again">"再登入一次"</string>
   <string name="action_signout">"登出"</string>
   <string name="action_signout_anyway">"直接登出"</string>

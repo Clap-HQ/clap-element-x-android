@@ -96,6 +96,7 @@
   <string name="action_send_message">"შეტყობინების გაგზავნა"</string>
   <string name="action_share">"გაზიარება"</string>
   <string name="action_share_link">"ბმულის გაზიარება"</string>
+  <string name="action_sign_in">"შესვლა"</string>
   <string name="action_sign_in_again">"ხელახლა შედით"</string>
   <string name="action_signout">"გამოსვლა"</string>
   <string name="action_signout_anyway">"მაინც გასვლა"</string>

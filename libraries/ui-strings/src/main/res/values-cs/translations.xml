@@ -153,6 +153,7 @@
   <string name="action_share">"Sdílet"</string>
   <string name="action_share_link">"Sdílet odkaz"</string>
   <string name="action_show">"Zobrazit"</string>
+  <string name="action_sign_in">"Přihlásit se"</string>
   <string name="action_sign_in_again">"Přihlásit se znovu"</string>
   <string name="action_signout">"Odhlásit se"</string>
   <string name="action_signout_anyway">"Přesto se odhlásit"</string>
