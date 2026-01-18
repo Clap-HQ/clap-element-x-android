@@ -40,6 +40,7 @@ fun aAdvancedSettingsState(
     timelineMediaPreviewValue: MediaPreviewValue = MediaPreviewValue.On,
     setTimelineMediaPreviewAction: AsyncAction<Unit> = AsyncAction.Uninitialized,
     setHideInviteAvatarsAction: AsyncAction<Unit> = AsyncAction.Uninitialized,
+    showDeveloperOptions: Boolean = true,
     eventSink: (AdvancedSettingsEvents) -> Unit = {},
 ) = AdvancedSettingsState(
     isDeveloperModeEnabled = isDeveloperModeEnabled,
@@ -52,5 +53,6 @@ fun aAdvancedSettingsState(
         setTimelineMediaPreviewAction = setTimelineMediaPreviewAction,
         setHideInviteAvatarsAction = setHideInviteAvatarsAction
     ),
+    showDeveloperOptions = showDeveloperOptions,
     eventSink = eventSink
 )

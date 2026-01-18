@@ -256,7 +256,8 @@ private fun ColumnScope.GeneralSection(
         leadingContent = ListItemContent.Icon(IconSource.Vector(CompoundIcons.Info())),
         onClick = onOpenAbout,
     )
-    if (state.canReportBug) {
+    // Developer Mode: showDeveloperOptions 설정에 따라 Report a Problem 표시
+    if (state.canReportBug && state.showDeveloperOptions) {
         ListItem(
             headlineContent = { Text(stringResource(id = CommonStrings.common_report_a_problem)) },
             leadingContent = ListItemContent.Icon(IconSource.Vector(CompoundIcons.ChatProblem())),
@@ -276,7 +277,8 @@ private fun ColumnScope.GeneralSection(
         onClick = onOpenAdvancedSettings,
     )
 
-    if (state.showLabsItem) {
+    // Developer Mode: showDeveloperOptions 설정에 따라 Labs 표시
+    if (state.showLabsItem && state.showDeveloperOptions) {
         ListItem(
             headlineContent = { Text(stringResource(id = R.string.screen_labs_title)) },
             leadingContent = ListItemContent.Icon(IconSource.Vector(CompoundIcons.Labs())),

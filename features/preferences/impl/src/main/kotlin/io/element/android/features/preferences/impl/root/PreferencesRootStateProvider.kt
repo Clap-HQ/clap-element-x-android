@@ -34,6 +34,7 @@ fun aPreferencesRootState(
     showLinkNewDevice = true,
     canReportBug = true,
     showDeveloperSettings = true,
+    showDeveloperOptions = true,
     showBlockedUsersItem = true,
     showLabsItem = true,
     canDeactivateAccount = true,

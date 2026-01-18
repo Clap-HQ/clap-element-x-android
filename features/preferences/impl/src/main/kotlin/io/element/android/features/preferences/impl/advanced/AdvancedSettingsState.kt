@@ -21,6 +21,7 @@ data class AdvancedSettingsState(
     val mediaOptimizationState: MediaOptimizationState?,
     val theme: ThemeOption,
     val mediaPreviewConfigState: MediaPreviewConfigState,
+    val showDeveloperOptions: Boolean,
     val eventSink: (AdvancedSettingsEvents) -> Unit
 )
 

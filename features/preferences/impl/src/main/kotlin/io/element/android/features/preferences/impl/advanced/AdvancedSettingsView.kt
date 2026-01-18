@@ -79,18 +79,21 @@ fun AdvancedSettingsView(
                 state.eventSink(AdvancedSettingsEvents.SetTheme(themeOption))
             }
         )
-        ListItem(
-            headlineContent = {
-                Text(text = stringResource(id = CommonStrings.action_view_source))
-            },
-            supportingContent = {
-                Text(text = stringResource(id = R.string.screen_advanced_settings_view_source_description))
-            },
-            trailingContent = ListItemContent.Switch(
-                checked = state.isDeveloperModeEnabled,
-            ),
-            onClick = { state.eventSink(AdvancedSettingsEvents.SetDeveloperModeEnabled(!state.isDeveloperModeEnabled)) }
-        )
+        // Developer Mode: showDeveloperOptions 설정에 따라 View Source 표시
+        if (state.showDeveloperOptions) {
+            ListItem(
+                headlineContent = {
+                    Text(text = stringResource(id = CommonStrings.action_view_source))
+                },
+                supportingContent = {
+                    Text(text = stringResource(id = R.string.screen_advanced_settings_view_source_description))
+                },
+                trailingContent = ListItemContent.Switch(
+                    checked = state.isDeveloperModeEnabled,
+                ),
+                onClick = { state.eventSink(AdvancedSettingsEvents.SetDeveloperModeEnabled(!state.isDeveloperModeEnabled)) }
+            )
+        }
         ListItem(
             headlineContent = {
                 Text(text = stringResource(id = R.string.screen_advanced_settings_share_presence))
@@ -189,7 +192,10 @@ fun AdvancedSettingsView(
             }
         }
 
-        ModerationAndSafety(state)
+        // Developer Mode: showDeveloperOptions 설정에 따라 Moderation and Safety 섹션 표시
+        if (state.showDeveloperOptions) {
+            ModerationAndSafety(state)
+        }
     }
 }
 

@@ -33,6 +33,7 @@ import io.element.android.libraries.matrix.api.core.UserId
 import io.element.android.libraries.matrix.api.oidc.AccountManagementAction
 import io.element.android.libraries.matrix.api.user.MatrixUser
 import io.element.android.libraries.matrix.api.verification.SessionVerificationService
+import io.element.android.libraries.preferences.api.store.AppPreferencesStore
 import io.element.android.libraries.sessionstorage.api.SessionStore
 import io.element.android.services.analytics.api.AnalyticsService
 import kotlinx.collections.immutable.persistentListOf
@@ -56,6 +57,7 @@ class PreferencesRootPresenter(
     private val rageshakeFeatureAvailability: RageshakeFeatureAvailability,
     private val featureFlagService: FeatureFlagService,
     private val sessionStore: SessionStore,
+    private val appPreferencesStore: AppPreferencesStore,
 ) : Presenter<PreferencesRootState> {
     @Composable
     override fun present(): PreferencesRootState {
@@ -126,6 +128,11 @@ class PreferencesRootPresenter(
 
         val showDeveloperSettings by showDeveloperSettingsProvider.showDeveloperSettings.collectAsState()
 
+        // Developer Mode: showDeveloperOptions 설정 (Labs, Report a Problem 등 숨김)
+        val showDeveloperOptions by appPreferencesStore
+            .isShowDeveloperSettingsEnabledFlow()
+            .collectAsState(initial = false)
+
         fun handleEvent(event: PreferencesRootEvents) {
             when (event) {
                 is PreferencesRootEvents.OnVersionInfoClick -> {
@@ -151,6 +158,7 @@ class PreferencesRootPresenter(
             canReportBug = canReportBug,
             showLinkNewDevice = showLinkNewDevice,
             showDeveloperSettings = showDeveloperSettings,
+            showDeveloperOptions = showDeveloperOptions,
             canDeactivateAccount = canDeactivateAccount,
             showBlockedUsersItem = showBlockedUsersItem,
             showLabsItem = showLabsItem,

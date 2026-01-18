@@ -51,6 +51,11 @@ class AdvancedSettingsPresenter(
 
         val mediaPreviewConfigState = mediaPreviewConfigStateStore.state()
 
+        // Developer Mode: showDeveloperOptions 설정 (View Source, Hide Invite Avatars, Timeline Media 등 숨김)
+        val showDeveloperOptions by appPreferencesStore
+            .isShowDeveloperSettingsEnabledFlow()
+            .collectAsState(initial = false)
+
         val themeOption by remember {
             derivedStateOf {
                 when (theme.value) {
@@ -118,6 +123,7 @@ class AdvancedSettingsPresenter(
             mediaOptimizationState = mediaOptimizationState,
             theme = themeOption,
             mediaPreviewConfigState = mediaPreviewConfigState,
+            showDeveloperOptions = showDeveloperOptions,
             eventSink = ::handleEvent,
         )
     }
