@@ -35,7 +35,6 @@ private val traceLogPacksKey = stringPreferencesKey("traceLogPacks")
 private val showCustomHomeserverKey = booleanPreferencesKey("developerMode_showCustomHomeserver")
 private val showQRCodeLoginKey = booleanPreferencesKey("developerMode_showQRCodeLogin")
 private val groupSpaceRoomsKey = booleanPreferencesKey("developerMode_groupSpaceRooms")
-private val spaceSettingsEnabledKey = booleanPreferencesKey("developerMode_spaceSettingsEnabled")
 private val showDeveloperSettingsKey = booleanPreferencesKey("developerMode_showDeveloperSettings")
 
 @ContributesBinding(AppScope::class)
@@ -189,18 +188,6 @@ class DefaultAppPreferencesStore(
     override fun isGroupSpaceRoomsEnabledFlow(): Flow<Boolean> {
         return store.data.map { prefs ->
             prefs[groupSpaceRoomsKey] ?: true
-        }
-    }
-
-    override suspend fun setSpaceSettingsEnabled(enabled: Boolean) {
-        store.edit { prefs ->
-            prefs[spaceSettingsEnabledKey] = enabled
-        }
-    }
-
-    override fun isSpaceSettingsEnabledFlow(): Flow<Boolean> {
-        return store.data.map { prefs ->
-            prefs[spaceSettingsEnabledKey] ?: true
         }
     }
 

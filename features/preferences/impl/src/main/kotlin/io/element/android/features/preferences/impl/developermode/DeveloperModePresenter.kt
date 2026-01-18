@@ -13,12 +13,15 @@ import androidx.compose.runtime.getValue
 import androidx.compose.runtime.rememberCoroutineScope
 import dev.zacsweers.metro.Inject
 import io.element.android.libraries.architecture.Presenter
+import io.element.android.libraries.featureflag.api.FeatureFlagService
+import io.element.android.libraries.featureflag.api.FeatureFlags
 import io.element.android.libraries.preferences.api.store.AppPreferencesStore
 import kotlinx.coroutines.launch
 
 @Inject
 class DeveloperModePresenter(
     private val appPreferencesStore: AppPreferencesStore,
+    private val featureFlagService: FeatureFlagService,
 ) : Presenter<DeveloperModeState> {
     @Composable
     override fun present(): DeveloperModeState {
@@ -38,9 +41,10 @@ class DeveloperModePresenter(
             .isGroupSpaceRoomsEnabledFlow()
             .collectAsState(initial = true)
 
-        val spaceSettingsEnabled by appPreferencesStore
-            .isSpaceSettingsEnabledFlow()
-            .collectAsState(initial = true)
+        // FeatureFlags.SpaceSettings 값 연동
+        val spaceSettingsEnabled by featureFlagService
+            .isFeatureEnabledFlow(FeatureFlags.SpaceSettings)
+            .collectAsState(initial = false)
 
         // Settings Section
         val showDeveloperSettings by appPreferencesStore
@@ -59,7 +63,7 @@ class DeveloperModePresenter(
                     appPreferencesStore.setGroupSpaceRooms(event.enabled)
                 }
                 is DeveloperModeEvents.SetSpaceSettingsEnabled -> coroutineScope.launch {
-                    appPreferencesStore.setSpaceSettingsEnabled(event.enabled)
+                    featureFlagService.setFeatureEnabled(FeatureFlags.SpaceSettings, event.enabled)
                 }
                 is DeveloperModeEvents.SetShowDeveloperSettings -> coroutineScope.launch {
                     appPreferencesStore.setShowDeveloperSettings(event.enabled)

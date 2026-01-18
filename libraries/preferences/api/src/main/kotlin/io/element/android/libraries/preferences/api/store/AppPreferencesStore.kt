@@ -48,9 +48,6 @@ interface AppPreferencesStore {
     suspend fun setGroupSpaceRooms(enabled: Boolean)
     fun isGroupSpaceRoomsEnabledFlow(): Flow<Boolean>
 
-    suspend fun setSpaceSettingsEnabled(enabled: Boolean)
-    fun isSpaceSettingsEnabledFlow(): Flow<Boolean>
-
     suspend fun setShowDeveloperSettings(enabled: Boolean)
     fun isShowDeveloperSettingsEnabledFlow(): Flow<Boolean>
 
